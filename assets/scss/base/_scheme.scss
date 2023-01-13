@@ -1,0 +1,100 @@
+/**
+ * Creates a context for color schemes.
+ *
+ * 1) The s-context class sets the container of a specific scheme.
+ * 2) Add data-scheme-target to all elements within a scheme that
+ *    should be targeted by the color rules.
+ */
+
+.s-context {
+    position: relative;
+    z-index: 1;
+
+    [data-scheme-target] {
+        @include scheme-html-default;
+    }
+
+    > div {
+        //padding-top: 1px;
+        //padding-bottom: 1px;
+        background:#fff;
+        
+    }
+
+    &--grey {
+        [data-scheme-target] {
+            @include scheme-html-default;
+        }
+
+        > div {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            background:$color-near-white;
+            
+        }
+    }
+    &--pink {
+        [data-scheme-target] {
+            @include scheme-html-default;
+        }
+        > div {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            background: $color-pink;
+        }
+    }
+    &--yellow {
+        background:$color-yellow;
+
+        [data-scheme-target] {
+            @include scheme-html-default;
+        }
+
+        > div {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            background: $color-yellow;
+        }
+    }
+
+    // Green will be dropped?
+    &--turquoise {
+        background:$color-turquoise;
+
+        [data-scheme-target] {
+            @include scheme-html-default;
+        }
+
+        > div {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            background: $color-turquoise;
+        }
+    }
+
+    &--blue {
+        [data-scheme-target] {
+            @include scheme-html($color-body, $color-body, $color-link);
+        }
+
+        > div {
+            background:$color-blue-bright;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            @include scheme-html($color-body, $color-body, $color-link);
+        }        
+    }
+
+    &--almost-black {
+        [data-scheme-target] {
+            @include scheme-html($color-body, $color-body, $color-link);
+        }
+
+        > div {
+            background:$color-almost-black;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            @include scheme-html($color-body, $color-body, $color-link);
+        }  
+    }
+}

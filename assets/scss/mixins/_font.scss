@@ -1,0 +1,18 @@
+$font-types: (
+    regular: (family: 'HelsinkiGroteskRegular', weight: normal),
+    medium: (family: 'HelsinkiGroteskMedium', weight: normal),
+    bold: (family: 'HelsinkiGroteskBold', weight: bold),
+    black: (family: 'HelsinkiGroteskBlack', weight: bold)
+);
+
+@mixin font($font-type:regular) {
+
+    @if map-has-key($font-types, $font-type) {
+        font-family: #{map-deep-get($font-types, $font-type, "family")}, sans-serif;
+        font-weight: #{map-deep-get($font-types, $font-type, "weight")};
+    }
+
+    @else {
+        @warn "`#{$font-type}` font type could not be found on the matrix.";
+    }
+}

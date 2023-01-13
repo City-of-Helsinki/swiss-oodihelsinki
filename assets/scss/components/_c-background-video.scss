@@ -1,0 +1,30 @@
+.c-background-video {
+    width: 100%;
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+
+    margin-left: -1px;
+    margin-right: -1px;
+
+    iframe {
+        position: absolute;
+        box-sizing: border-box;
+        top: 50%;
+        left: 50%;
+        height: 56.25vw;
+        min-height: 100%;
+        min-width: 100%;
+        transform: translate(-50%, -50%);
+        width: 177.77777778vh;
+    }
+
+    &--ratio-wide {
+        padding-bottom: 25%;
+    }
+
+    @include bp(sm){
+        padding-bottom: 82vh;
+    }
+}

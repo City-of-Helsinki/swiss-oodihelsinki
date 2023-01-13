@@ -1,0 +1,87 @@
+.c-image-gallery-item {
+    &__download {
+        padding: 0 !important;
+        margin: 0;
+        color: $color-blue-bright;
+        width: auto;
+        line-height: 1.2;
+        height: auto !important;
+        @include font-size(mdsm); // yup
+        @include font(bold);
+        position: relative;
+        @include spacing(margin, bottom, box);
+
+        &:before {
+            content: "\f019";
+            font-weight: 900;
+            font-family: "Font Awesome\ 5 Free";
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
+    &__image {
+        position: relative;
+
+        // Message about what one can do with the image
+        span {
+            opacity: 0;
+            position: absolute;
+            top: calc(50% + 50px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            transition: 0.2s ease-in-out;
+        }
+
+        // Icon
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 42px;
+            height: 42px;
+            background-color: #fff;
+            background-image: url("../img/image_gallery_cta.svg");
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-position: center;
+            border-radius: 100%;
+            box-shadow: 0 0 0 2px #000;
+            opacity: 0;
+            z-index: 2;
+            transition: 0.2s ease-in-out;
+        }
+
+        // Overlay effect
+        &:before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: 0.2s ease-in-out;
+        }
+
+        // Display overlay & icon on hover
+        .no-touch &:hover,
+        .no-touch &:focus {
+            &:before,
+            &:after,
+            span {
+                opacity: 1;
+            }
+        }
+    }
+    &__title {
+        margin-top: 5px;
+        @include font-size(mdsm); // yup
+    }
+}

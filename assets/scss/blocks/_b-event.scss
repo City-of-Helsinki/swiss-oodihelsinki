@@ -1,0 +1,8 @@
+.b-event {
+    @include spacing(padding, top, itemspace);
+    @include spacing(padding, bottom, itemspace);
+
+    &__container {
+        @include container();
+    }
+}

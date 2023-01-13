@@ -1,0 +1,167 @@
+.b-subpage-hero {
+
+    // The back button used in some hero elements
+    &__back {
+        @include font-size(mdsm);
+        @include font(bold);
+
+        i {
+            font-size: 10px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            margin-right: 1rem;
+            vertical-align: middle;
+
+            &:before {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &:hover,
+        &:focus {
+            color: $color-link-hover;
+            i {
+                border-color: $color-link-hover;
+            }
+        }
+    }
+
+    &--white {
+        background: #fff;
+    }
+    h1 {
+        @include font-size(xxl);
+        word-break: break-word;
+    }
+    &__container {
+        display:flex;
+        flex-direction:column;
+    }
+    &__text {
+        @include spacing(padding,top,section);
+        @include spacing(padding,bottom,section);
+        @include koro("white","section","horizontal","bottom");
+        position: relative;
+        &--inner {
+            @include container;
+        }
+        &--inner-text {
+            max-width:800px;
+        }
+        &--inner-blog {
+        }
+
+        // Special modifier for blog index...........
+        .b-subpage-hero--blog-index & {
+            padding-bottom: 0;
+        }
+
+
+        // Reset the koro z-index for cases where we use a react select component,
+        // as the z-index messes up the select options
+        .has-select-component & {
+            &:after {
+                z-index: auto;
+            }
+        }
+
+    }
+    &__image {
+        height:50%;
+        background-size: cover;
+        background-position: center;
+        min-height:200px;
+        @include bp(sm) {
+            min-height:400px;
+        }
+        @include bp(xl) {
+            min-height:500px;
+        }
+        // .no-touch & {
+        //     background-attachment: fixed;
+        // }
+    }
+    &__blog-main {
+        width:100%;
+    }
+    &__blog-meta {
+        width:100%;
+    }
+    &__extra {
+        display: flex;
+        flex: 1;
+    }
+
+
+    &__filters {
+        @include spacing(margin, top, itemspace);
+        @include spacing(margin, bottom, box);
+
+        @include bp(sm) {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    &__filter {
+        width: 100%;
+        @include spacing(margin, bottom, box);
+
+        label {
+            @include font(bold);
+            @include font-size(h4);
+        }
+
+        @include bp(sm) {
+            max-width: 360px;
+            @include spacing(margin, right, box);
+            margin-bottom: 0;
+        }
+    }
+
+    &__clear {
+        border: none;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        overflow: visible;
+        background: transparent;
+        /* inherit font & color from ancestor */
+        color: inherit;
+        font: inherit;
+        /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+        line-height: normal;
+        /* Corrects font smoothing for webkit */
+        -webkit-font-smoothing: inherit;
+        -moz-osx-font-smoothing: inherit;
+        /* Corrects inability to style clickable `input` types in iOS */
+        -webkit-appearance: none;
+        padding: 0;
+        position: relative;
+        padding-left: 0;
+        border: 0;
+        opacity:0.5;
+        @include font(regular);
+        @include spacing(margin, top, box);
+        transition: 0.2s ease-in-out;
+        @include font-size(md);
+
+        @include bp(sm) {
+            @include spacing(margin, left, itemspace);
+        }
+
+        &:before {
+            content: "\f00d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            display: inline-block;
+            margin-right: 1rem;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+/**
+ * Wrapper for post slider component, and the necessary post slider -specific
+ * adjustments to Flickity elements to make it match the new design.
+ */
+.c-post-slider {
+    padding-bottom: 60px;
+
+    @include bp(sm) {
+        margin-left: -4rem;
+    }
+
+    &__slide {
+        width: 100%;
+        margin-right: 0;
+
+        @include bp(sm) {
+            width: 25%;
+            padding-left: 4rem;
+
+            // If item is in viewport
+            &.is-selected {
+            }
+
+            // .c-card {
+            //     @include spacing(padding, right, itemspace);
+            // }
+        }
+    }
+
+    // Override default flickity styling
+    .flickity-prev-next-button {
+
+        &.previous {
+            left: auto;
+            right: 60px;
+            transform: none;
+            top: auto;
+            bottom: 0px;
+
+            &:hover {
+                right: 60px;
+                left: auto;
+            }
+        }
+
+        &.next {
+            left: auto;
+            right: 0;
+            transform: none;
+            top: auto;
+            bottom: 0px;
+
+            &:hover {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}

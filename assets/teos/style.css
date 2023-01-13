@@ -1,0 +1,680 @@
+@font-face {
+    font-family: 'tributeot-roman';
+    src: url('fonts/tributeot-roman-webfont.eot');
+    src: url('fonts/tributeot-roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/tributeot-roman-webfont.woff2') format('woff2'),
+         url('fonts/tributeot-roman-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+section.omistuskirjoitus {
+  
+  /*
+  font-family: sans-serif;
+  
+  color: #000;
+  */
+  margin: 0;
+}
+
+section.omistuskirjoitus h2,
+section.omistuskirjoitus .h3 {
+  margin-bottom: .3em;
+} 
+
+section.omistuskirjoitus p {
+    margin-top: 0.8em;
+    margin-right: 0px;
+    margin-bottom: 0.8em;
+    margin-left: 0px;
+}
+
+section.omistuskirjoitus a {
+  color: #000;
+  text-decoration: none;
+}
+
+.omistuskirjoitus-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  margin: 0 auto;
+  max-width: 1270px;
+  width: 90%;
+  line-height: 1;
+  margin-top: 30px;
+}
+
+.omistuskirjoitus-header > div {
+  min-width: 340px;
+  margin-top: 20px;
+}
+
+.omistuskirjoitus-header .omistuskirjoitus-title {
+  width: 40%;
+}
+
+.omistuskirjoitus-header .omistuskirjoitus-langs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5em;
+  max-width: 500px;
+}
+
+@media (min-width: 992px) {
+  .omistuskirjoitus-header .omistuskirjoitus-langs {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .omistuskirjoitus-header .omistuskirjoitus-langs {
+    max-width: 550px;
+  }
+}
+
+.omistuskirjoitus-header .omistuskirjoitus-langs a {
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+}
+
+.omistuskirjoitus-langs a {
+  border-bottom: solid #fff 2px;
+}
+
+.omistuskirjoitus-langs a:hover {
+  border-bottom: solid #000 2px;
+}
+
+section.omistuskirjoitus:lang(fi) .omistuskirjoitus-header .omistuskirjoitus-langs a:lang(fi)  {
+  border-bottom: solid #000 2px;
+}
+
+section.omistuskirjoitus:lang(sv) .omistuskirjoitus-header .omistuskirjoitus-langs a:lang(sv)  {
+  border-bottom: solid #000 2px;
+}
+
+section.omistuskirjoitus:lang(en) .omistuskirjoitus-header .omistuskirjoitus-langs a:lang(en)  {
+  border-bottom: solid #000 2px;
+}
+
+section.omistuskirjoitus:lang(ru) .omistuskirjoitus-header .omistuskirjoitus-langs a:lang(ru)  {
+  border-bottom: solid #000 2px;
+}
+
+section.omistuskirjoitus:lang(es) .omistuskirjoitus-header .omistuskirjoitus-langs a:lang(es)  {
+  border-bottom: solid #000 2px;
+}
+
+section.omistuskirjoitus:lang(fr) .omistuskirjoitus-header .omistuskirjoitus-langs a:lang(fr)  {
+  border-bottom: solid #000 2px;
+}
+
+section.omistuskirjoitus:lang(de) .omistuskirjoitus-header .omistuskirjoitus-langs a:lang(de)  {
+  border-bottom: solid #000 2px;
+}
+
+section.omistuskirjoitus:lang(ar) .omistuskirjoitus-header .omistuskirjoitus-langs a:lang(ar)  {
+  border-bottom: solid #000 2px;
+}
+
+section.omistuskirjoitus:lang(ja) .omistuskirjoitus-header .omistuskirjoitus-langs a:lang(ja)  {
+  border-bottom: solid #000 2px;
+}
+
+section.omistuskirjoitus:lang(zh) .omistuskirjoitus-header .omistuskirjoitus-langs a:lang(zh)  {
+  border-bottom: solid #000 2px;
+}
+
+.omistuskirjoitus-header .omistuskirjoitus-title h1 {
+  margin: 0 0 10px;
+  line-height: 1;
+}
+ 
+.omistuskirjoitus-controls {
+  max-width: 1270px;
+  width: 90%;
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: space-between;
+} 
+
+.omistuskirjoitus-left, .omistuskirjoitus-right, .omistuskirjoitus-pause {
+  border: solid #272726;
+}
+
+.omistuskirjoitus-pause { 
+  display: none;
+  border-width: 0 8px 0 8px;
+  width: 10px;
+  height: 40px;
+  margin-top: 15px;
+}
+
+.omistuskirjoitus-left, .omistuskirjoitus-right {
+  border: solid #272726;
+  border-width: 0 7px 7px 0;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 20px 8px;
+}
+
+.omistuskirjoitus-right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.omistuskirjoitus-left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+ 
+#omistuskirjoitus-words-wrapper {
+  font-family: tributeot-roman, serif;
+  background-color: #272726;
+  color: #CBCCCB;
+  font-size: 24px;
+  overflow: hidden;
+  position: relative;
+  margin-left: -200px; 
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 600px;
+  max-height: calc(100vh - 305px);
+  min-height: 420px;
+}
+
+
+#omistuskirjoitus-words {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  position: relative;
+  height: 100%;
+  display: none;
+}
+
+.omistuskirjoitus-scroller-ready #omistuskirjoitus-words {
+  display: block;
+}
+
+
+.omistuskirjoitus-column {
+  width: 400px;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  position: absolute;
+}
+/*
+.omistuskirjoitus-column:first-of-type {
+  color: red;
+}
+*/
+/*
+.column:nth-of-type(2n+1) {
+  background-color: #555;
+}
+
+.column:nth-of-type(2n+1) .omistuskirjoitus-word {
+  background-color: #000;
+}
+*/
+
+
+
+.omistuskirjoitus-word {
+  position: absolute;
+  white-space: nowrap;
+  padding: 0 10px;
+}
+
+.omistuskirjoitus-word span {
+  display: none;
+}
+
+section.omistuskirjoitus h1,
+section.omistuskirjoitus a.omistuskirjoitus-introduction,
+section.omistuskirjoitus div.omistuskirjoitus-introduction {
+    display: none;
+}
+
+section.omistuskirjoitus a.omistuskirjoitus-introduction {
+    display: none;
+}
+
+section.omistuskirjoitus a.omistuskirjoitus-listen {
+    display: none;
+}
+
+section.omistuskirjoitus:lang(fi) .omistuskirjoitus-word span:lang(fi),
+section.omistuskirjoitus:lang(fi) h1:lang(fi),
+section.omistuskirjoitus:lang(fi) a.omistuskirjoitus-introduction:lang(fi),
+section.omistuskirjoitus:lang(fi) div.omistuskirjoitus-introduction:lang(fi),
+section.omistuskirjoitus:lang(fi) a.omistuskirjoitus-listen:lang(fi)
+ {
+  display: block;
+}
+
+section.omistuskirjoitus:lang(sv) .omistuskirjoitus-word span:lang(sv),
+section.omistuskirjoitus:lang(sv) h1:lang(sv),
+section.omistuskirjoitus:lang(sv) a.omistuskirjoitus-introduction:lang(sv),
+section.omistuskirjoitus:lang(sv) div.omistuskirjoitus-introduction:lang(sv) {
+  display: block;
+}
+
+section.omistuskirjoitus:lang(en) .omistuskirjoitus-word span:lang(en),
+section.omistuskirjoitus:lang(en) h1:lang(en),
+section.omistuskirjoitus:lang(en) a.omistuskirjoitus-introduction:lang(en),
+section.omistuskirjoitus:lang(en) div.omistuskirjoitus-introduction:lang(en) {
+  display: block;
+}
+
+section.omistuskirjoitus:lang(ru) .omistuskirjoitus-word span:lang(ru),
+section.omistuskirjoitus:lang(ru) h1:lang(ru),
+section.omistuskirjoitus:lang(ru) a.omistuskirjoitus-introduction:lang(ru),
+section.omistuskirjoitus:lang(ru) div.omistuskirjoitus-introduction:lang(ru) {
+  display: block;
+}
+
+section.omistuskirjoitus:lang(es) .omistuskirjoitus-word span:lang(es),
+section.omistuskirjoitus:lang(es) h1:lang(es),
+section.omistuskirjoitus:lang(es) a.omistuskirjoitus-introduction:lang(es),
+section.omistuskirjoitus:lang(es) div.omistuskirjoitus-introduction:lang(es) {
+  display: block;
+}
+
+section.omistuskirjoitus:lang(fr) .omistuskirjoitus-word span:lang(fr),
+section.omistuskirjoitus:lang(fr) h1:lang(fr),
+section.omistuskirjoitus:lang(fr) a.omistuskirjoitus-introduction:lang(fr),
+section.omistuskirjoitus:lang(fr) div.omistuskirjoitus-introduction:lang(fr) {
+  display: block;
+}
+
+section.omistuskirjoitus:lang(de) .omistuskirjoitus-word span:lang(de),
+section.omistuskirjoitus:lang(de) h1:lang(de),
+section.omistuskirjoitus:lang(de) a.omistuskirjoitus-introduction:lang(de),
+section.omistuskirjoitus:lang(de) div.omistuskirjoitus-introduction:lang(de) {
+  display: block;
+}
+
+section.omistuskirjoitus:lang(ar) .omistuskirjoitus-word span:lang(ar),
+section.omistuskirjoitus:lang(ar) h1:lang(ar),
+section.omistuskirjoitus:lang(ar) a.omistuskirjoitus-introduction:lang(ar),
+section.omistuskirjoitus:lang(ar) div.omistuskirjoitus-introduction:lang(ar) {
+  display: block;
+}
+
+section.omistuskirjoitus:lang(ja) .omistuskirjoitus-word span:lang(ja),
+section.omistuskirjoitus:lang(ja) h1:lang(ja),
+section.omistuskirjoitus:lang(ja) a.omistuskirjoitus-introduction:lang(ja),
+section.omistuskirjoitus:lang(ja) div.omistuskirjoitus-introduction:lang(ja) {
+  display: block;
+}
+
+section.omistuskirjoitus:lang(zh) .omistuskirjoitus-word span:lang(zh),
+section.omistuskirjoitus:lang(zh) h1:lang(zh),
+section.omistuskirjoitus:lang(zh) a.omistuskirjoitus-introduction:lang(zh),
+section.omistuskirjoitus:lang(zh) div.omistuskirjoitus-introduction:lang(zh) {
+  display: block;
+}
+
+.omistuskirjoitus-links {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.omistuskirjoitus-listen {
+  margin-left: 1em;
+}
+
+.omistuskirjoitus-listen span {
+  margin-right: 0.5em;
+}
+
+/* lomitetaan sarakkeet */
+.omistuskirjoitus-word:nth-child(2n+1) {
+  /*margin-left: -50%*/
+}
+
+/* 13 riviä */
+
+/*
+.omistuskirjoitus-word:nth-child(13n+1) {
+  top: 0%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+2) {
+  top: 7.7%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+3) {
+  top: 15.4%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+4) {
+  top: 23.1%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+5) {
+  top: 30.8%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+6) {
+  top: 38.5%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+7) {
+  top: 46.2%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+8) {
+  top: 53.8%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+9) {
+  top: 61.5%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+10) {
+  top: 69.2%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+11) {
+  top: 76.9%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+12) {
+  top: 84.6%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+13) {
+  top: 92.3%;
+}
+*/
+
+/* 10 riviä */
+
+
+.omistuskirjoitus-word:nth-child(13n+1) {
+  top: 0%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+2) {
+  top: 10%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+3) {
+  top: 20%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+4) {
+  top: 30%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+5) {
+  top: 40%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+6) {
+  top: 50%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+7) {
+  top: 60%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+8) {
+  top: 70%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+9) {
+  top: 80%;
+}
+
+.omistuskirjoitus-word:nth-child(13n+10) {
+  top: 90%;
+}
+
+/* satumanvaraiset paikat, 10 erilaista */
+
+.omistuskirjoitus-word.omistuskirjoitus-place-1 {
+  left: 0%;
+}
+.omistuskirjoitus-word:nth-child(2n+1).omistuskirjoitus-place-1 {
+  left: calc(0% + 50%);
+}
+
+.omistuskirjoitus-word.omistuskirjoitus-place-2 {
+  left: 10%;
+}
+.omistuskirjoitus-word:nth-child(2n+1).omistuskirjoitus-place-2 {
+  left: calc(10% + 50%);
+}
+
+.omistuskirjoitus-word.omistuskirjoitus-place-3 {
+  left: 20%;
+}
+.omistuskirjoitus-word:nth-child(2n+1).omistuskirjoitus-place-3 {
+  left: calc(20% + 50%);
+}
+
+.omistuskirjoitus-word.omistuskirjoitus-place-4 {
+  left: 30%;
+}
+.omistuskirjoitus-word:nth-child(2n+1).omistuskirjoitus-place-4 {
+  left: calc(30% + 50%);
+}
+
+.omistuskirjoitus-word.omistuskirjoitus-place-5 {
+  left: 40%;
+}
+.omistuskirjoitus-word:nth-child(2n+1).omistuskirjoitus-place-5 {
+  left: calc(40% + 50%);
+}
+
+.omistuskirjoitus-word.omistuskirjoitus-place-6 {
+  right: 40%;
+}
+.omistuskirjoitus-word:nth-child(2n+1).omistuskirjoitus-place-6 {
+  right: calc(40% - 50%);
+}
+
+.omistuskirjoitus-word.omistuskirjoitus-place-7 {
+  right: 30%;
+}
+.omistuskirjoitus-word:nth-child(2n+1).omistuskirjoitus-place-7 {
+  right: calc(30% - 50%);
+}
+
+.omistuskirjoitus-word.omistuskirjoitus-place-8 {
+  right: 20%;
+}
+.omistuskirjoitus-word:nth-child(2n+1).omistuskirjoitus-place-8 {
+  right: calc(20% - 50%);
+}
+
+.omistuskirjoitus-word.omistuskirjoitus-place-9 {
+  right: 10%;
+}
+.omistuskirjoitus-word:nth-child(2n+1).omistuskirjoitus-place-9 {
+  right: calc(10% - 50%);
+}
+
+.omistuskirjoitus-word.omistuskirjoitus-place-10 {
+  right: 0%;
+}
+.omistuskirjoitus-word:nth-child(2n+1).omistuskirjoitus-place-10 {
+  right: calc(0% - 50%);
+}
+
+.omistuskirjoitus-loader,
+.omistuskirjoitus-loader:before,
+.omistuskirjoitus-loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
+}
+.omistuskirjoitus-loader {
+  position: absolute;
+  top: calc(50% - 40px);
+  left: calc(50% + 75px);
+  z-index: 100;
+  color: #CBCCCB;
+  font-size: 10px;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+.omistuskirjoitus-loader:before,
+.omistuskirjoitus-loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.omistuskirjoitus-loader:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.omistuskirjoitus-loader:after {
+  left: 3.5em;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+.omistuskirjoitus-scroller-ready .omistuskirjoitus-loader {
+  display: none;
+}
+
+/* popup */
+
+.omistuskirjoitus-popup .omistuskirjoitus-popup-overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+
+.omistuskirjoitus-popup .omistuskirjoitus-popup-content {
+  position:absolute;
+  /*top:50%;*/
+  top: 5vw;
+  left:50%;
+  margin-bottom: 5vw;
+  /*transform:translate(-50%,-50%) scale(0);*/
+  transform:translate(-50%,0%) scale(0);
+  background:#fff;
+  width:800px;
+  max-width: 90vw;
+  /*max-height: calc(100vh - 100px);*/
+  z-index:2;
+  padding:50px;
+  box-sizing:border-box;
+  overflow: auto;
+}
+
+/*
+.omistuskirjoitus-popup#omistuskirjoitus-listen-popup .omistuskirjoitus-popup-content {
+  padding:50px 0;
+}
+*/
+.omistuskirjoitus-popup#omistuskirjoitus-listen-popup .omistuskirjoitus-popup-content figure {
+  margin: 0;
+}
+
+.omistuskirjoitus-popup#omistuskirjoitus-listen-popup .omistuskirjoitus-popup-content figure audio {
+  max-width: 100%;
+}
+
+.omistuskirjoitus-popup.active .omistuskirjoitus-popup-content {
+  transition:all 300ms ease-in-out;
+  z-index:1000;
+  
+  /*transform:translate(-50%,-50%) scale(1);*/
+  transform:translate(-50%,-0%) scale(1);
+}
+
+/*
+.omistuskirjoitus-popup .omistuskirjoitus-popup-close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  background:#222;
+  color:#fff;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+*/
+
+.omistuskirjoitus-popup .omistuskirjoitus-popup-close-btn {
+  position: absolute;
+  right: 15px;
+  top: 24px;
+  width: 55px;
+  height: 40px;
+}
+
+section.omistuskirjoitus:lang(ar) .omistuskirjoitus-popup .omistuskirjoitus-popup-close-btn {
+  right: auto;
+  left: 20px;
+}
+
+.omistuskirjoitus-popup .omistuskirjoitus-popup-close-btn:before, .omistuskirjoitus-popup .omistuskirjoitus-popup-close-btn:after {
+  position: absolute;
+  left: 24px;
+  content: ' ';
+  height: 40px;
+  width: 7px;
+  background-color: #000;
+}
+.omistuskirjoitus-popup .omistuskirjoitus-popup-close-btn:before {
+  transform: rotate(45deg);
+}
+.omistuskirjoitus-popup .omistuskirjoitus-popup-close-btn:after {
+  transform: rotate(-45deg);
+}
+
+
+.omistuskirjoitus-popup.active .omistuskirjoitus-popup-overlay {
+  display:block;
+}
+

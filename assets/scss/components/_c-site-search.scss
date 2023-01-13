@@ -1,0 +1,79 @@
+.c-site-search {
+    @include koro($color:"yellow",$size:"section",$direction:"horizontal",$vposition:"bottom");
+    position: absolute; // Override koro mixin positioning
+    display: block;
+    width: 100%;
+    top: $b-navbar-height-mobile;
+    left: 0;
+    background: $color-search-bg;
+    @include spacing(padding, all, itemspace);
+    @include z-index(assetfront);
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: all 0.15s ease-in-out;
+    visibility: hidden;
+    @include bp(sm) {
+        top: $b-navbar-height;
+        z-index: -2;
+    }
+
+    &__container {
+        @include container();
+        display: flex;
+    }
+
+    &__form {
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    &__input {
+        width: 100%;
+        background: transparent;
+        border: 0;
+        //outline: 0;
+        border-bottom: 2px solid #000;
+        @include font-size(h3);
+        margin-right: 5px;
+        /*
+        &::-webkit-input-placeholder {
+
+        }
+        &::-moz-placeholder {
+
+        }
+        &:-ms-input-placeholder {
+
+        }
+        */
+    }
+
+    &__button {
+        width: 120px;
+        -moz-appearance: none !important;
+        -webkit-appearance: none !important;
+        @include btn();
+    }
+
+    &__close {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        margin-right: auto;
+        background: none;
+        display: none;
+        min-width: 150px;
+        margin-left: 6rem;
+        @include bp(sm) {
+            display: block;
+        }
+    }
+
+    &.is-active {
+        visibility: visible;
+        transform: scaleY(1.0);
+    }
+}

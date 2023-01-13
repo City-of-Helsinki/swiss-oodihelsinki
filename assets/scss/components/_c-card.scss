@@ -1,0 +1,151 @@
+.c-card {
+    @include animation(zoomIn, 1s, both, $ease-out-expo, 0s);
+
+    width: 100%;
+    position: relative;
+    background-size: cover;
+
+    &--removing {
+        @include animation(zoomOut, 1s, both, $ease-out-expo, 0s);
+    }
+
+    &__image {
+        // background: url(http://fakeimg.pl/650x450/000000/fff/?text=img) center center no-repeat;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $color-tag;
+        position: relative;
+        padding-top: 60%;
+        width: 100%;
+        transition: $transition-slow;
+
+        @include bp(md) {
+            width: auto;
+            height: auto;
+            padding-top: 100%;
+            .c-card--page & {
+                padding-top: 55%;
+            }
+        }
+
+        .c-card--tall &:not(&--single),
+        .has-tall-cards &:not(&--single) {
+            @include bp(md) {
+                padding-top: 125%;
+            }
+        }
+
+        &--single {
+            padding-top: 55%;
+        }
+
+        .no-touch &:hover,
+        &.hovered {
+            filter: brightness(1.3);
+        }
+    }
+
+    &__content {
+        @include spacing(padding, top, box);
+        @include spacing(padding, top, box);
+        position: relative;
+        .c-card--page & {
+            @include bp(md) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    &__meta {
+        position: absolute;
+        white-space: nowrap;
+        bottom: 0;
+        left: 0;
+        top: auto;
+        right: auto;
+        text-align: left;
+        background: $color-tag;
+        padding: 0.5rem 1.5rem;
+        @include font(medium);
+        @include spacing(padding, left, box);
+
+        .c-card--event & {
+            background: $color-tag-event;
+        }
+
+        &--event {
+            background: #5a5a5a;
+            color: #fff;
+        }
+    }
+
+    &__title {
+        margin-top: 1.5rem;
+        @include bp(md) {
+            margin: 0.2em 0;
+        }
+        .c-card--page & {
+            margin-top: 0;
+        }
+    }
+
+    &__tag {
+        @include font-size(sm);
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    &__description {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__readmore {
+        @include font-size(sm);
+        margin-top: 1rem;
+    }
+
+    &__event-fields {
+        margin: 0.5rem 0;
+        @include font-size(md);
+    }
+
+    &__event-time {
+        i {
+            margin-right: 1rem;
+        }
+    }
+    &__event-location {
+        i {
+            margin-right: 1rem;
+        }
+    }
+    .l-cards--first-highlighted & {
+        @include bp(md) {
+            .c-card__image {
+                margin-bottom: -$card-content-height;
+                padding-top: 0;
+                height: 100%;
+            }
+            .c-card__content {
+                min-height: $card-content-height;
+                background: #fff;
+            }
+            .c-card__meta {
+                bottom: $card-content-height;
+            }
+            .c-card__title {
+                @include font-size(h3);
+            }
+            .c-card__event-fields {
+                display: flex;
+                justify-content: space-between;
+            }
+            .c-card__event-time {
+                width: 60%;
+            }
+        }
+    }
+}

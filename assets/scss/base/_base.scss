@@ -1,0 +1,88 @@
+/**
+ * Set the base document styles here.
+ *
+ * 1) This file should only be used for the most top level elements.
+ * 2) See typography and block, layout and component files for more
+ *    specific styles.
+ */
+
+html {
+    box-sizing: border-box;
+    font-size: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include bp(xs) {
+        font-size: 0.53125rem;
+    }
+
+    @include bp(sm) {
+        font-size: 0.5625rem;
+    }
+
+    @include bp(md) {
+        font-size: 0.59375rem;
+        overflow-y: scroll;
+    }
+
+    @include bp(lg) {
+        font-size: 0.625rem;
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+*:focus {
+    outline-width: thick !important;
+    outline-color: rgb(77, 144, 254) !important;
+    outline-offset: -1px !important;
+    -webkit-box-shadow: 0px 0px 5px  #4D90FE;
+    box-shadow: 0px 0px 5px  #4D90FE;
+
+    &:before, &:after {
+        outline: none !important;
+    }
+}
+
+*:-moz-focusring {
+    outline-style: solid !important;
+}
+
+body {
+    @include font-size(base);
+
+    background-color: $color-body;
+    font-family: $font-family-default;
+    font-weight: $font-weight-default;
+    line-height: $line-height-base;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @include bp(sm) {
+        padding-top: $b-site-header-height;
+    }
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    line-height: inherit;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    max-width: 100%;
+}

@@ -1,0 +1,7 @@
+.b-media-files {
+    @include section();
+
+    &__container {
+        @include container;
+    }
+}

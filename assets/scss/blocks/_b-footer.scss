@@ -1,0 +1,204 @@
+.b-footer {
+    @include z-index(footer);
+    position: relative;
+    background: $color-footer;
+
+    &__container {
+        @include container();
+        @include spacing(padding, top, itemspace);
+        position: relative;
+    }
+
+    &__navcontainer {
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        @include bp(sm) {
+            flex-direction: row;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+
+    &__links {
+        text-align: center;
+
+        @include bp(sm) {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        a {
+            @include font-size(sm);
+        }
+    }
+
+    &__logo {
+        width: 15rem;
+        @include bp(sm, max) {
+            padding-top: 20px;
+        }
+    }
+
+    &__lower {
+        background: $color-footer;
+        border-top: 2px solid $color-footer;
+    }
+    // An absolute mess below, beware. Rewrite the footer CSS/HTML when you have time.
+    &__logos {
+        @include spacing(padding, top, box);
+        @include spacing(padding, bottom, box);
+        display: flex;
+        flex-direction: row;
+
+        @include bp(sm) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__logos-item {
+        width: 100%;
+        text-align: center;
+        @include spacing(padding, top, box);
+        @include spacing(padding, bottom, box);
+
+        &--library {
+            display: none;
+
+            @include bp(sm) {
+                display: flex;
+                flex-direction: column;
+
+                a {
+                    @include bp(sm, max) {
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+        }
+
+        @include bp(sm) {
+            padding: 0;
+
+            &--helsinki {
+                width: 33.33%;
+                text-align: left;
+            }
+
+            &--library {
+                width: 66.66%;
+                text-align: right;
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: row;
+
+                a {
+                    line-height: 90px;
+
+                    &:not(:last-of-type) {
+                        margin-right: 6rem;
+                    }
+                }
+            }
+        }
+
+        // Sorry, fixing earlier issues
+        &__logo--helsinki {
+            height: 80px;
+        }
+
+        &__logo--library {
+            width: 220px;
+            //height: 90px;
+        }
+    }
+
+    &__navigation {
+        width: 90%;
+        display: none;
+
+        @include bp(sm) {
+            display: block;
+            padding-left: 10%;
+        }
+    }
+
+    &__copyright {
+        @include font-size(sm);
+        @include spacing(padding, top, box);
+        @include spacing(padding, bottom, box);
+        border-top: 2px solid rgba($border-color-light, 1);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+
+        @include bp(sm) {
+            flex-direction: row;
+        }
+
+        // Sorry
+        .c-btn {
+            @include bp(sm) {
+                margin-left: 3rem;
+            }
+        }
+
+        &__item {
+            display: block;
+            align-items: center;
+
+            @include bp(sm) {
+                display: flex;
+            }
+
+            // This is really stupid, I know
+            &--copyright {
+                > a {
+                    text-decoration: underline;
+                }
+            }
+
+            &--social {
+                // .c-social-media { margin-right: 2rem; }
+                @include bp(sm, max) {
+                    border-bottom: 2px solid #ebedf1;
+                    margin-bottom: 15px;
+                    padding-bottom: 8px;
+                }
+
+                @include bp(sm, max) {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        p {
+            text-align: left;
+            @include bp(sm, max) {
+                display: inline;
+            }
+        }
+
+        p + p {
+            margin-left: 2rem;
+        }
+
+        .c-social-media {
+            color: #000;
+            font-size: 1.6rem;
+
+            &__list a {
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,156 @@
+.b-blog {
+    @include section;
+
+    &--index {
+        margin-top: 0 !important;
+        overflow-x:hidden;
+    }
+
+    &--single {
+        // margin-bottom:0;
+    }
+
+    // Yup. We are way beyond salvation at this point already, so let's go all in / xDDDDD
+    &__highlight-wrapper {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        margin-bottom: 4rem;
+        @include koro($color:"nearwhite",$size:"section",$direction:"horizontal");
+
+        // koro hackery
+        &:after {
+            width: 800%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &:before {
+            content: "";
+            background: $color-near-white;
+            display: block;
+            width: 800%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__container {
+        @include container;
+        article > *:not(img):not(.wp-caption) {
+            max-width: 100%;
+            margin-left: auto!important;
+            margin-right:auto!important;
+            width:90%;
+        }
+
+        &--wider {
+            max-width: $container-max-width+100;
+        }
+
+        &+& {
+            @include spacing(margin, top, itemspace);
+            @include spacing(margin, bottom, itemspace);
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+
+        .b-blog--index & {
+            @include container();
+        }
+
+    }
+    &__posts-listing {
+        // @include container;
+    }
+
+    &__single-meta {
+        @include spacing(margin, top, box);
+    }
+
+    &--space-above {
+        @include spacing(margin, top, section);
+    }
+    &__filters {
+        @include spacing(margin,bottom,itemspace);
+        @include spacing(margin,top,itemspace);
+        @include font-size(sm);
+        background: #fff;
+        font-weight: $font-weight-strong;
+
+        &--cta {
+            display:inline-block;
+            padding-left:1rem;
+        }
+
+        &--inner {
+            @include bp(sm) {
+                display:flex;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &__loadmore {
+        display:block;
+        @include spacing(margin,bottom,box);
+        @include spacing(margin,top,box);
+        text-align: center;
+    }
+
+    &__sharebuttons {
+        background-color: $color-blog-separator;
+        position:relative;
+        @include spacing(padding,all,box);
+        @include spacing(margin,top,section);
+        @include koro($color:"yellow",$size:"section",$direction:"horizontal");
+        &--event {
+            background-color: $color-tag-event;
+            @include koro($color:"green",$size:"section",$direction:"horizontal");
+        }
+    }
+
+    &__bottom {
+        background: $color-blog-moreposts;
+        &--event {
+            background: $color-blog-moreposts;
+        }
+    }
+
+    &__moreposts {
+        @include container;
+        @include spacing(padding, top, section);
+        @include spacing(padding, bottom, section);
+
+    }
+    &__moreposts-title {
+        @include spacing(padding,bottom,itemspace);
+        text-align: center;
+        position: relative;
+        @include font-size(h2);
+
+        @include bp(sm) {
+            text-align:left;
+        }
+    }
+
+    &__moreposts-link {
+        @include bp(md) {
+            position: absolute !important;
+            bottom: 3rem;
+            right: 0;
+        }
+    }
+
+    &__event-fields {
+        @include spacing(padding,bottom,box);
+        i {
+            margin-right:1rem;
+        }
+    }
+}

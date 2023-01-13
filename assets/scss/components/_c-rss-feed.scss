@@ -1,0 +1,32 @@
+.c-rss-feed {
+    list-style-type:none;
+    padding:0;
+    &__item {
+        display:flex;
+        flex-wrap: wrap;
+        margin-bottom:1rem;
+        @include bp(sm) {
+            flex-wrap:nowrap;
+        }
+    }
+    &__date-and-title {
+        width:100%;
+        @include bp(sm) {
+            width:80%;
+            @include spacing(padding,right,box);
+        }
+
+    }
+    &__link {
+        width:100%;
+        @include font-size(sm);
+        @include bp(sm) {
+            width:20%;
+            align-self:flex-end;
+        }
+    }
+    &__date {
+        display:block;
+        font-weight: $font-weight-strong;
+    }
+}

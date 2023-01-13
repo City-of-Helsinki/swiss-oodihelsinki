@@ -1,0 +1,106 @@
+@mixin koro-block(
+    $color: "white",
+    $size: "section",
+    $direction: "horizontal",
+    $vposition: "top"
+) {
+    position: relative;
+    z-index: 2;
+    & + div {
+        z-index: 1;
+    }
+    @if $color == "grey" {
+        border-color: $color-near-white;
+    } @else if $color == "pink" {
+        border-color: $color-pink;
+    } @else if $color == "yellow" {
+        border-color: $color-yellow;
+    } @else if $color == "white" {
+        border-color: $color-white;
+    } @else if $color == "blue" {
+        border-color: $color-blue-bright;
+    } @else if $color == "turquoise" {
+        border-color: $color-turquoise;
+    } @else if $color == "almost-black" {
+        border-color: $color-almost-black;
+    }
+    &::before {
+        @include z-index(content, 1);
+        content: "";
+        position: absolute;
+        transform: rotate(180deg);
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+        @if $size == "section" {
+            //top: -2px;
+            height: 25px;
+        } @else if $size == "itemspace" {
+            //top: -2px;
+            height: 10px;
+        }
+
+        @if $color == "grey" {
+            background-image: url("../img/koro_grey_top.svg");
+        } @else if $color == "pink" {
+            background-image: url("../img/koro_top_pink.svg");
+        } @else if $color == "yellow" {
+            background-image: url("../img/koro_top_yellow.svg");
+        } @else if $color == "white" {
+            background-image: url("../img/koro_top_white.svg");
+        } @else if $color == "blue" {
+            background-image: url("../img/koro_top_blue.svg");
+        } @else if $color == "turquoise" {
+            background-image: url("../img/koro_top_turquoise.svg");
+        } @else if $color == "almost-black" {
+            background-image: url("../img/koro_top_almost_black.svg");
+        }
+
+        @include bp(sm, max) {
+            background-size: auto 50%;
+            background-position: center bottom; // because of rotation use backwards vertical positioning
+        }
+    }
+
+    &::after {
+        @include z-index(content);
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: auto;
+        bottom: -2px;
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+
+        @if $size == "section" {
+            height: 25px;
+        } @else if $size == "itemspace" {
+            height: 10px;
+        }
+
+        @if $color == "grey" {
+            background-image: url("../img/koro_grey_top.svg");
+        } @else if $color == "pink" {
+            background-image: url("../img/koro_top_pink.svg");
+        } @else if $color == "yellow" {
+            background-image: url("../img/koro_top_yellow.svg");
+        } @else if $color == "white" {
+            background-image: url("../img/koro_top_white.svg");
+        } @else if $color == "blue" {
+            background-image: url("../img/koro_top_blue.svg");
+        } @else if $color == "turquoise" {
+            background-image: url("../img/koro_top_turquoise.svg");
+        } @else if $color == "almost-black" {
+            background-image: url("../img/koro_top_almost_black.svg");
+        }
+
+        @include bp(sm, max) {
+            background-size: auto 52%;
+            background-position: center bottom; // because of rotation use backwards vertical positioning
+        }
+    }
+}

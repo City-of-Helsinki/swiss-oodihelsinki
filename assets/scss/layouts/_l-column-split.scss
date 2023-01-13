@@ -1,0 +1,35 @@
+$l-column-split-gap: 30px;
+
+.l-column-split {
+    display: block;
+
+    @include bp(sm) {
+        display: flex;
+        flex: 1;
+        margin: -$l-column-split-gap / 2;
+    }
+
+    &__item {
+        display: block;
+        width: 100%;
+
+        & + & {
+            margin: $l-column-split-gap 0 0;
+
+            @include bp(sm) {
+                margin: $l-column-split-gap / 2;
+            }
+        }
+
+        @include bp(sm) {
+            margin: $l-column-split-gap / 2;
+        }
+
+        &--narrow {
+            @include bp(sm) {
+                min-width: 33.333%;
+                max-width: 33.333%;
+            }
+        }
+    }
+}

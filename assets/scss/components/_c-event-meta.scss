@@ -1,0 +1,14 @@
+.c-event-meta {
+    @include spacing(margin, top, itemspace);
+    display: flex;
+    p,
+    div {
+        // Sorry
+        margin-top: 0 !important;
+        @include font-size(h3);
+
+        &:not(:last-child) {
+            margin-right: 5rem;
+        }
+    }
+}

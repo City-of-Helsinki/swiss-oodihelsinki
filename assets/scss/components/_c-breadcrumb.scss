@@ -1,0 +1,9 @@
+.c-breadcrumb {
+    @include font-size(sm);
+    // @include spacing(padding,bottom,box);
+    // .breadcrumb_last  {
+    // }
+    &:empty {
+        display: none;
+    }
+}

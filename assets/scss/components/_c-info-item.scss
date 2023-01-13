@@ -1,0 +1,31 @@
+.c-info-item {
+    text-align: center;
+
+    &__icon {
+        fill: #000;
+        max-width: 80px;
+        display: inline-block;
+
+        svg {
+            max-width: 80px;
+            width: 100%;
+            height: auto;
+        }
+
+        .c-info-item--black & { fill: #000; }
+        .c-info-item--yellow & { fill: $color-yellow; }
+        .c-info-item--white & { fill: $color-white; }
+        .c-info-item--green & { fill: $color-green-lighter; }
+        .c-info-item--pink & { fill: $color-pink; }
+        .c-info-item--blue & { fill: $color-blue-bright; }
+    }
+
+    &__number {
+        @include font-size(h1);
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        @include font-size(h3);
+    }
+}

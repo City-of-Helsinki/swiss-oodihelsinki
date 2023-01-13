@@ -1,0 +1,39 @@
+.b-quote {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    &__container {
+        @include container;
+    }
+    &__text {
+        @include font-size(h1);
+        @include font(bold);
+        line-height:$line-height-heading;
+        text-align: center;
+        max-width:100rem;
+        margin:0 auto;
+        padding-top: 7rem;
+        position: relative;
+        @include font(bold);
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0rem;
+            width: 5rem;
+            height: 5rem;
+            background-image: url('../img/oodi-quotation.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &__author {
+        @include font-size(sm);
+        @include spacing(margin,top,itemspace);
+        text-align: center;
+    }
+}

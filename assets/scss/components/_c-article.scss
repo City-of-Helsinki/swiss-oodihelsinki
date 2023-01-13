@@ -1,0 +1,27 @@
+.c-article {
+    img {
+        max-width:$container-max-width;
+        margin-left: auto;
+        margin-right:auto;       
+    }
+    img.article-width {
+        max-width:$article-max-width;
+        margin-left: auto;
+        margin-right:auto;
+    }
+    img.medium {
+        max-width:$container-max-width;
+        margin-left: auto;
+        margin-right:auto;
+    }
+    img.full-screen {
+        max-width:100%;
+    }
+    .wp-caption {
+        width:100%!important;
+        text-align: center;
+    }
+    .wp-caption-text {
+        text-align: center;
+    }
+}

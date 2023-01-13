@@ -1,0 +1,11 @@
+.b-page-content {
+    //@include animation( fadeInUp, 1s, both, $ease-out-expo, 0s);
+    width: 100%;
+
+    @for $i from 1 through 50 {
+        > div:nth-child(#{$i}) {
+            transition: all .2s #{$i * .1}s ease-in;
+            z-index: #{$i + 2};
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.c-icon {
+    position: relative;
+    width: 18px;
+    height: 16px;
+    display: inline-block;
+    &__clock {
+        &::before {
+            content:'';
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            background: url('../img/clock-icon.svg');
+            background-size:100%;
+        }
+    }
+    &__marker {
+        &::before {
+            content:'';
+            width: 18px;
+            height: 23px;
+            position: absolute;
+            background: url('../img/marker-icon.svg');
+            background-size:100%;
+        }
+    }
+
+    &__close {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        &--right {
+            text-align: right;
+        }
+    }
+}

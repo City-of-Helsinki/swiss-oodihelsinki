@@ -1,0 +1,15 @@
+.c-media-files-item {
+    @include spacing(margin,all,box);       
+    &__load {
+        display:block;
+    }
+    &__title {
+        padding-top:0.5rem;
+    }
+    &__image-wrapper {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+}

@@ -1,0 +1,9 @@
+@import "../../../../../assets/scss/everblox-helper";
+
+.b-summary {
+    @include section();
+
+    &__container {
+        @include container();
+    }
+}

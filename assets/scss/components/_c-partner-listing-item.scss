@@ -1,0 +1,9 @@
+.c-partner-listing-item {
+    display: inline-block;
+    min-height:250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include bp(sm) {
+        min-height:200px;
+    }
+}

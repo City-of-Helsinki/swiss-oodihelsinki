@@ -1,0 +1,91 @@
+.c-koro {
+    &--yellow {
+        @include koro-block("yellow", "section", "horizontal", "top");
+    }
+
+    &--turquoise {
+        @include koro-block("turquoise", "section", "horizontal", "top");
+    }
+
+    &--pink {
+        @include koro-block("pink", "section", "horizontal", "top");
+        &.c-koro--reverse.c-koro--top {
+            &:before {
+                @include bp(md) {
+                    top: 1px !important; //sorry
+                }
+            }
+        }
+        &.c-koro--reverse.c-koro--bottom {
+            &:after {
+                @include bp(md) {
+                    bottom: 1px !important; //sorry
+                }
+            }
+        }
+    }
+
+    &--grey {
+        @include koro-block("grey", "section", "horizontal", "top");
+    }
+
+    &--blue {
+        @include koro-block("blue", "section", "horizontal", "top");
+    }
+
+    &--white,
+    &--default {
+        @include koro-block("white", "section", "horizontal", "top");
+    }
+    &--almost-black {
+        @include koro-block("almost-black", "section", "horizontal", "top");
+    }
+
+    &--bottom {
+        &:before {
+            display: none !important;
+        }
+    }
+
+    &--top {
+        &:after {
+            display: none !important;
+        }
+    }
+
+    &--reverse {
+        &.c-koro--top {
+            border-width: 2px 0 0 0;
+            border-style: solid;
+            &:before {
+                top: -1px !important;
+                transform: translateY(-100%) !important;
+                @include bp(md) {
+                    top: -1px !important;
+                }
+            }
+            @include bp(lg) {
+                border-width: 1px 0 0 0;
+            }
+        }
+        &.c-koro--bottom {
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            bottom: -1px !important;
+            &:after {
+                bottom: 0px !important;
+                transform: rotate(180deg) translateY(-100%) !important;
+                @include bp(md) {
+                    bottom: 0px !important;
+                }
+            }
+        }
+    }
+
+    &--none {
+        &:before,
+        &:after {
+            display: none !important;
+        }
+    }
+}

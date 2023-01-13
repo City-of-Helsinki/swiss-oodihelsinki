@@ -1,0 +1,11 @@
+.b-featured-activities {
+    @include section();
+
+    &__container {
+        @include container();
+    }
+
+    .h-wysiwyg-html {
+        max-width: 768px;
+    }
+}

@@ -1,0 +1,84 @@
+.c-promo-box {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    @include spacing(margin, bottom, section);
+
+    @include bp(md) {
+        margin-bottom: 0;
+    }
+
+    &__image {
+        display: block;
+        background-color: $color-brand;
+        width: 90%;
+        height: 0;
+        padding-bottom: 90%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__title-area {
+        position: absolute;
+        transform: translateY(-50%);
+        background: $color-pink-lighter;
+        padding: 1.5rem 3rem;
+        right: 0;
+        width: 90%;
+        &--yellow {
+            background: $color-yellow;
+        }
+        &--pink {
+            background: $color-pink-lighter;
+        }
+        &--white {
+            background: #fff;
+        }
+        &--green {
+            background: $color-green-lighter;
+        }
+        &--blue {
+            background: $color-blue-bright;
+            color: #fff;
+            .c-btn {
+                color: #fff;
+            }
+        }
+    }
+
+    &__secondary-title {
+        @include font(regular);
+        @include font-size(sm);
+    }
+
+    &__title {
+        @include font(bold);
+        @include font-size(h3);
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 12px;
+            background-image: url("../img/chevron.svg");
+            background-size: contain;
+            background-position: center left;
+            background-repeat: no-repeat;
+            margin-left: 10px;
+            transition: 0.2s ease-in-out;
+        }
+
+        .no-touch & {
+            &:hover,
+            &:focus {
+                &:after {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+{
+    "key": "group_5bc07a62b5f19",
+    "title": "Featured activities",
+    "fields": [
+        {
+            "key": "field_5bc07aca64167",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "Short description of what the featured event is about.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5bc07a7c64165",
+            "label": "Start time",
+            "name": "time",
+            "type": "time_picker",
+            "instructions": "The time of day when this activity starts.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "G:i",
+            "return_format": "U"
+        },
+        {
+            "key": "field_5bcd80a695e5e",
+            "label": "End time",
+            "name": "end_time",
+            "type": "time_picker",
+            "instructions": "The time of day when this activity ends.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "G:i",
+            "return_format": "U"
+        },
+        {
+            "key": "field_5bc07aac64166",
+            "label": "Specific location",
+            "name": "specific_location",
+            "type": "textarea",
+            "instructions": "Specific location of the event (e.g. Ryhmätila 301).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "featured_activity"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1540194631
+}

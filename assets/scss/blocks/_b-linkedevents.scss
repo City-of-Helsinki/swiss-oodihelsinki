@@ -1,0 +1,39 @@
+.b-linkedevents {
+    overflow-x: hidden;
+    @include section();
+
+    &__container {
+        @include container();
+    }
+
+    &__highlight-wrapper {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        margin-bottom: 4rem;
+        @include koro(
+            $color: "nearwhite",
+            $size: "section",
+            $direction: "horizontal"
+        );
+
+        // koro hackery
+        &:after {
+            width: 800%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &:before {
+            content: "";
+            background: $color-near-white;
+            display: block;
+            width: 800%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.l-event {
+    @include bp(sm) {
+        display: flex;
+    }
+
+    &__content {
+        @include spacing(margin, bottom, section);
+
+        @include bp(sm) {
+            margin-bottom: 0;
+            width: 75%;
+            @include spacing(padding, right, itemspace);
+        }
+    }
+
+    &__sidebar {
+        @include bp(sm) {
+            width: 25%;
+        }
+    }
+}

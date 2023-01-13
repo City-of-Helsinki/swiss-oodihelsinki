@@ -1,0 +1,37 @@
+.b-notice {
+    @include z-index(notice);
+    position: sticky;
+    width:100%;
+    top: $b-navbar-height;
+    left: 0;
+    background: $color-notice-bg;
+    color: $color-text;
+    @include spacing(padding, top, itemspace);
+    @include spacing(padding, bottom, itemspace);
+
+    &__item {
+        @include wysiwyg-html();
+        padding-left: 75px;
+        background-image: url(../img/oodi-icon-info.svg);
+        background-repeat: no-repeat;
+        background-size: 50px 50px;
+        background-position: top left;
+
+        @include bp(sm) {
+            padding-left: 125px;
+            background-size: 75px 75px;
+        }
+
+        &__content {
+            @include spacing(margin, bottom, box);
+        }
+    }
+
+    &__container {
+        @include container();
+    }
+
+    &.is-hidden {
+        display: none;
+    }
+}

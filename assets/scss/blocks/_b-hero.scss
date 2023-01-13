@@ -1,0 +1,128 @@
+.b-hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative; // Makes sure the ratio stays the same across different viewports.
+    
+    /** 
+     * [1] Fix issues with Firefox failing to apply padding to the element.
+     */
+    &:after {
+        content: "";
+        width: 1px;
+        display: table; /*[1]*/
+    }
+
+    h1 {
+        @include font-size(xxl);
+    }
+
+    &__background {
+        height: 50%;
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+        width:100%;
+        @include bp(xl) {
+            min-height:500px;
+        }
+        .no-touch & {
+            background-attachment: fixed;
+        }
+    }
+
+    &__container {
+        @include container;
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction:column;
+        @include bp(md) {
+            flex-direction:row;
+        }
+    }
+
+    &__content {
+        @include koro("white","section","horizontal");
+        @include spacing(padding,top,itemspace);
+        @include spacing(padding,bottom,itemspace);
+        width:100%;
+    }
+
+    &__intro {
+        width:100%;
+        text-align: center;
+        @include spacing(padding,top,itemspace);
+        @include spacing(padding,bottom,itemspace);
+        @include bp(md) {
+            @include spacing(padding,right,itemspace);
+            padding-top:0;
+            padding-bottom:0;
+            width:65%;
+            text-align: left;
+        }
+    }
+
+    &__linked-page {
+        width:100%;
+        @include spacing(padding,top,itemspace);
+        @include spacing(padding,bottom,itemspace);
+        @include bp(md) {
+            @include spacing(padding,left,itemspace);
+            padding-top:0;
+            padding-bottom:0;
+            width:35%;
+        }
+        h1 {
+            @include font-size(h1);
+        }
+    }
+
+    &__meta {
+        @include spacing(margin,top,itemspace);
+        @include spacing(margin,bottom,itemspace);
+        display: flex;
+        flex-direction:column-reverse;
+        align-items: center;
+        width: 100%;
+        @include bp(sm) {
+            flex-direction:row;
+        }
+    }
+
+    &__video-link {
+        width:100%;
+        @include bp(md) {
+            width:33%;
+            align-self:flex-start;
+        }
+    }
+
+    &__countdown {
+        width:100%;
+        text-align:center;
+        display: flex;
+        justify-content: center;
+        @include spacing(padding,top,itemspace);
+        @include spacing(padding,bottom,itemspace);
+        @include bp(md) {
+            width:33%;
+            align-self:flex-start;
+            text-align: left;
+            padding-top:0;
+            padding-bottom:0;
+        }
+    }
+
+    &__opening-hours {
+        width:100%;
+        @include spacing(padding,bottom,itemspace);
+        @include bp(md) {
+            width:33%;
+            align-self:flex-start;
+            padding-bottom:0;
+        }
+    }
+}

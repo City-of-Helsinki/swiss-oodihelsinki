@@ -1,0 +1,23 @@
+.c-download {
+    @include spacing(margin, top, box);
+    @include spacing(margin, bottom, box);
+
+    &__title {
+
+    }
+
+    &__link {
+        color: $color-blue-bright;
+        @include font-size(mdsm); // yup
+        @include font(bold);
+        position: relative;
+
+        &:before {
+            content: "\f019";
+            font-weight: 900;
+            font-family: 'Font Awesome\ 5 Free';
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
+}

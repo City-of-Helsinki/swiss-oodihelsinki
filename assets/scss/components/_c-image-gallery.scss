@@ -1,0 +1,28 @@
+.c-image-gallery {
+    @include spacing(padding,bottom,section);
+    &__item {
+        width:100%;
+        text-align:center;
+        &--img {
+            width:100%;
+        }
+    }
+    &__meta {
+        @include spacing(margin,top,box);
+        display:flex;
+        justify-content: space-between;
+    }
+    &__status {
+        width:15%;
+        font-size: 2rem;
+        @include bp(sm) {
+            font-size: 3rem;
+        }
+    }
+    &__title {
+        width:70%;
+    }
+    &__download {
+        width:15%;
+    }
+}

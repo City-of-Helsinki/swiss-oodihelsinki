@@ -1,0 +1,154 @@
+@import "../../../../../assets/scss/everblox-helper";
+
+.b-large-image-text {
+    @include spacing(margin, top, section);
+    @include spacing(margin, bottom, section);
+    overflow: hidden;
+
+    &__container {
+        @include container();
+        position: relative;
+    }
+
+    &__text {
+        background: $color-yellow;
+        padding: 4rem;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 90%;
+        position: relative;
+        top: -50px;
+        left: 5%;
+
+        @include bp(sm) {
+            position: static;
+            width: 45%;
+            margin-top: 6rem;
+            margin-bottom: 6rem;
+            min-height: 500px;
+            left: auto;
+        }
+
+        .b-large-image-text--right & {
+            margin-left: auto;
+        }
+
+        .b-large-image-text--yellow & {
+            background: $color-yellow;
+            & {
+                h1,h2,h3,.h3,h4,h5,h6,p,span {
+                    color: black;
+                }
+
+                a.c-btn {
+                    border-color: black;
+                    color: black;
+                }
+            }
+        }
+        .b-large-image-text--pink & {
+            background: $color-pink-lighter;
+            & {
+                h1,h2,h3,.h3,h4,h5,h6,p,span {
+                    color: black;
+                }
+
+                a.c-btn {
+                    border-color: black;
+                    color: black;
+                }
+            }
+        }
+        .b-large-image-text--white & {
+            background: #fff;
+            & {
+                h1,h2,h3,.h3,h4,h5,h6,p,span {
+                    color: black;
+                }
+
+                a.c-btn {
+                    border-color: black;
+                    color: black;
+                }
+            }
+        }
+        .b-large-image-text--green & {
+            background: $color-green-lighter;
+            & {
+                h1,h2,h3,.h3,h4,h5,h6,p,span {
+                    color: black;
+                }
+
+                a.c-btn {
+                    border-color: black;
+                    color: black;
+                }
+            }
+        }
+        .b-large-image-text--blue & {
+            background: $color-blue-bright;
+            color: #fff;
+            & {
+                h1,h2,h3,.h3,h4,h5,h6,p,span {
+                    color: #fff;
+                }
+                a.c-btn {
+                    border-color: #fff;
+                    color: #fff;
+                }
+            }
+            .c-btn {
+                color: #fff;
+            }
+        }
+
+        &__content {
+            width: 100%;
+            
+            h1:first-of-type,
+            h2:first-of-type,
+            h3:first-of-type,
+            h4:first-of-type {
+                margin-top: -10px !important;
+            }
+        }
+    }
+
+    &__image-wrapper {
+        display: block;
+        height: 100%;
+        display: flex;
+
+        @include bp(sm, max) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+        width: 100%;
+        height: 300px;
+        position: relative;
+
+        @include bp(sm) {
+            position: absolute;
+            width: 70%;
+            height: 100%;
+            left: auto;
+            right: -6rem;
+        }
+
+        .b-large-image-text--right & {
+            right: auto;
+            left: -6rem;
+        }
+    }
+}

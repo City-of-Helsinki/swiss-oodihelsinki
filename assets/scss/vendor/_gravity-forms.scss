@@ -1,0 +1,14 @@
+.gform_button {
+    @include btn;
+}
+
+.ginput_container {
+    input,textarea {
+        border: 1px solid #979797;
+        width:100%!important;
+    }
+}
+
+label.gfield_label {
+    font-weight:400!important;
+}

@@ -1,0 +1,81 @@
+$cards-gutter: 15px;
+
+.l-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -$cards-gutter;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .c-linkedevents & {
+        margin:0;
+    }
+
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    &--first-highlighted {
+        @include bp(md) {
+            @include spacing(margin, bottom, itemspace);
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            flex-wrap: wrap;
+            position: relative;
+            height: 70rem;
+            @include bp(lg) {
+                height: 80rem;
+            }
+            @include bp(xl) {
+                height: 90rem;
+            }
+            .l-cards__item {
+                position: relative;
+                -webkit-box-flex: 0;
+                flex: 0 0 auto;
+                width: 50%;
+                height: 50%;
+                &:first-child {
+                    width: 50%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    &__item {
+        width: 100%;
+        padding: $cards-gutter;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @include bp(md) {
+            width: 33.333%;
+            .l-cards--pages & {
+                width: 50%;
+            }
+            .l-cards--info & {
+                width: 25%;
+            }
+            .l-cards--blog & {
+                width: 25%;
+            }
+            .l-cards--blog-single & {
+                width: 25%;
+            }
+        }
+    }
+
+    // for our bad ass veterans
+    .no-flexbox & {
+        display: block;
+
+        &__item {
+            float: left;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@import "../../../../../assets/scss/everblox-helper";
+
+.b-call-to-action {
+    padding-top: 20rem;
+    padding-bottom: 20rem;
+
+    &__container {
+        @include container();
+    }
+
+    &__content {
+        text-align: center;
+    }
+
+    &__text {
+        @include font-size(h1);
+    }
+
+    &__link {
+
+    }
+}

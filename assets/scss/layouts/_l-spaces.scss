@@ -1,0 +1,21 @@
+.l-spaces {
+    @include spacing(padding, top, section);
+    @include spacing(padding, bottom, section);
+    width: 100%;
+
+    &__item {
+        display: block;
+        width: 100%;
+        @include spacing(margin, top, itemspace);
+        @include spacing(margin, bottom, itemspace);
+
+        @include bp(sm) {
+            @include spacing(margin, top, box);
+            @include spacing(margin, bottom, box);
+        }
+    }
+
+    &__container {
+        @include container();
+    }
+}

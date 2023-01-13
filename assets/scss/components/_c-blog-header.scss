@@ -1,0 +1,8 @@
+.c-blog-header {
+
+    @include spacing(padding, top, itemspace);
+    @include spacing(padding, bottom, itemspace);
+    @include spacing(margin, bottom, itemspace);
+
+    text-align: center;
+}

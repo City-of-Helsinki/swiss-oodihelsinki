@@ -1,0 +1,18 @@
+.c-search-toggle {
+    border: 0;
+    background: none;
+    -webkit-appearance: none;
+    transition: 0.1s linear;
+    @include font(bold);
+
+    @include bp(sm) {
+        opacity: 0.8;
+        transform: scale(0.9);
+
+        &:hover,
+        &:focus {
+            transform: scale(1.1);
+            opacity: 1.0;
+        }
+    }
+}

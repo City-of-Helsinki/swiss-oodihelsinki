@@ -1,0 +1,44 @@
+.c-search-results {
+    @include spacing(margin, top, itemspace);
+
+    &__meta {
+        @include spacing(margin, bottom, itemspace);
+    }
+
+    &__title {
+        @include font-size(h0);
+    }
+
+    &__term {
+        @include font(bold);
+    }
+
+    &__result {
+        @include spacing(margin, top, box);
+        @include spacing(margin, bottom, box);
+    }
+
+    &__nav {
+        @include spacing(margin, top, itemspace);
+        @include spacing(margin, bottom, itemspace);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__item {
+            display: inline-block;
+        }
+
+        &__item + &__item {
+            margin-left: 1rem;
+        }
+
+        &__item a {
+            @include btn();
+        }
+
+        &__item:empty {
+            display: none;
+        }
+    }
+}

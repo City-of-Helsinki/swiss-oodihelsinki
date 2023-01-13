@@ -1,0 +1,310 @@
+/**
+ * Define the global variables used across the project here.
+ *
+ * 1) Always create variables with a meaningful context.
+ * 2) Avoid defining component specific variables on the global level.
+ * 3) See other files in the base folder for more global styles.
+ */
+
+// Project colors (do not directly reference outside this file).
+
+$color-yellow: #ffea80; // used in phase 2
+$color-yellow-lighter: #fff0a4;
+$color-green: #00d7a7;
+$color-green-lighter: #7febd3; // used in phase 2
+$color-pink: #ffc2d7;
+$color-pink-lighter: #f4d9e5; // used in phase 2
+$color-grey: #dedfe1;
+$color-grey-lighter: #ebedf1;
+$color-near-white: #f6f6f8; // used in phase 2
+$color-blue: #c9dff2;
+$color-blue-bright: #0000bf; // used in phase 2
+$color-turquoise: #a7f1e1;
+$color-white: #ffffff;
+$color-almost-black: #4f4f4f;
+
+// Bind colors to meaningful variables.
+$color-brand: $color-pink-lighter;
+$color-text: #000;
+$color-heading: #000;
+$color-body: $color-white;
+$color-link: $color-green;
+$color-link-hover: $color-green;
+$color-overlay: darken($color-brand, 35%);
+$color-tag: $color-grey-lighter;
+$color-tag-event: $color-green-lighter;
+
+$color-blog-moreposts: $color-pink-lighter;
+$color-banner: $color-yellow-lighter;
+$color-blog-separator: $color-yellow;
+$color-search-bg: $color-yellow;
+$color-filters-bg: $color-blue;
+$color-notice-bg: $color-pink-lighter;
+$color-faq-bg: $color-grey-lighter;
+$color-image-gallery-bg: $color-grey-lighter;
+$color-mobile-nav-footer: $color-near-white;
+$color-footer: $color-near-white;
+
+$color-loading: $color-pink;
+
+// Navbar & site-header vars
+$b-site-header-height: 80px;
+$b-navbar-height: 50px;
+$b-navbar-height-mobile: 65px;
+$b-navbar-horizontal-padding: 0;
+
+/**
+ * Font sizes for responsive scalability (used by @mixin font-size).
+ *
+ * Define new sizes as needed.
+ */
+
+$font-sizes: (
+    sm: (
+        xs: 1.4rem,
+        sm: 1.4rem,
+        md: 1.4rem,
+        lg: 1.4rem,
+        xl: 1.4rem
+    ),
+    mdsm: (
+        xs: 1.6rem,
+        sm: 1.6rem,
+        md: 1.6rem,
+        lg: 1.6rem,
+        xl: 1.6rem
+    ),
+    md: (
+        xs: 1.8rem,
+        sm: 1.8rem,
+        md: 1.8rem,
+        lg: 1.8rem,
+        xl: 1.8rem
+    ),
+    lg: (
+        xs: 2rem,
+        sm: 2rem,
+        md: 2rem,
+        lg: 2rem,
+        xl: 2rem
+    ),
+    xxl: (
+        xs: 4.2rem,
+        sm: 5rem,
+        md: 6rem,
+        lg: 8rem,
+        xl: 9.2rem
+    ),
+    button: (
+        xs: 1.6rem,
+        sm: 1.6rem,
+        md: 1.6rem,
+        lg: 1.6rem,
+        xl: 1.6rem
+    ),
+    h6: (
+        xs: 1.6rem,
+        sm: 1.6rem,
+        md: 1.6rem,
+        lg: 1.6rem,
+        xl: 1.6rem
+    ),
+    h5: (
+        xs: 1.8rem,
+        sm: 1.8rem,
+        md: 1.8rem,
+        lg: 1.8rem,
+        xl: 1.8rem
+    ),
+    h4: (
+        xs: 1.8rem,
+        sm: 2rem,
+        md: 2rem,
+        lg: 2rem,
+        xl: 2rem
+    ),
+    h3: (
+        xs: 2.2rem,
+        sm: 2.2rem,
+        md: 2.4rem,
+        lg: 2.4rem,
+        xl: 2.4rem
+    ),
+    h2: (
+        xs: 3rem,
+        sm: 3.2rem,
+        md: 3.6rem,
+        lg: 3.6rem,
+        xl: 3.6rem
+    ),
+    h1: (
+        xs: 3.6rem,
+        sm: 3.6rem,
+        md: 4.2rem,
+        lg: 4.8rem,
+        xl: 4.8rem
+    ),
+    h0: (
+        xs: 4rem,
+        sm: 4.8rem,
+        md: 6.4rem,
+        lg: 7.8rem,
+        xl: 8rem
+    )
+);
+
+// Set the document base font size.
+$font-size-base: md;
+
+// Font families
+$font-family-default: "HelsinkiGroteskRegular", Arial, sans-serif;
+$font-family-heading: "HelsinkiGroteskBold", Arial, sans-serif;
+
+// Font weights
+$font-weight-default: 400;
+$font-weight-strong: 700;
+$font-weight-heading: $font-weight-strong;
+
+// Line heights
+$line-height-base: 1.628571429;
+$line-height-heading: 1.2;
+
+/**
+ * Spacing sizes for responsive scalability (used by @mixin spacing).
+ *
+ * Define new sizes as needed.
+ */
+
+$spacing-sizes: (
+    section: (
+        xs: 25px,
+        sm: 35px,
+        md: 60px,
+        lg: 80px,
+        xl: 100px
+    ),
+    itemspace: (
+        xs: 20px,
+        sm: 25px,
+        md: 30px,
+        lg: 40px,
+        xl: 50px
+    ),
+    box: (
+        xs: 10px,
+        sm: 15px,
+        md: 20px,
+        lg: 20px,
+        xl: 20px
+    )
+);
+
+// Border radiuses
+$border-radius-default: 5px;
+$border-radius-small: 2px;
+$border-radius-large: 15px;
+
+// Box shadows
+$box-shadow-default: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+$box-shadow-large: 0 3px 40px 0 rgba(0, 0, 0, 0.2);
+
+// Border colors
+$border-color-default: #ccc;
+$border-color-light: #ebedf1;
+
+// Animation easing methods
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+$ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+
+// Transitions
+$transition-default: all 0.5s $ease-out-expo;
+$transition-fast: all 0.25s $ease-out-expo;
+$transition-slow: all 0.8s $ease-out-sine;
+$transition-slide: all 1s $ease-in-out-quart;
+
+// Opacity
+$opacity-overlay: 0.5;
+
+/**
+ * Core variables.
+ *
+ * Take care in changing the following values as they can fundamentally
+ * change the behavior of the site.
+ */
+
+// Bootstrap grid extensions
+$screen-xl: 1600px;
+$screen-xl-min: $screen-xl;
+$screen-lg-max: $screen-xl-min - 1;
+
+// Grid container
+$container-max-width: 1270px;
+$container-max-width-wider: 1570px;
+$container-width: 90%;
+$container-gutter-width: 5%;
+$container-sm-max: 100%;
+$container-md-max: 100%;
+$container-lg-max: 1170px;
+$container-xl-max: 1241px;
+
+$article-max-width: 800px;
+
+// CSS animation minimum window width.
+$animated-min-width: 1025px;
+
+//card padding
+$card-content-height: 13rem;
+
+/**
+ * Brand color profiles. Find more at: http://brandcolors.net
+ *
+ * Use map with the "brand" helper function:
+ *
+ *   color: brand(facebook);
+ *   background-color: brand(instagram);
+ */
+
+$brand-colors: (
+    airbnb: #fd5c63,
+    android: #a4c639,
+    bandcamp: #629aa9,
+    behance: #1769ff,
+    blogger: #f57d00,
+    deviantart: #05cc47,
+    disqus: #2e9fff,
+    etsy: #d5641c,
+    facebook: #3b5998,
+    flickr: #ff0084,
+    foursquare: #2d5be3,
+    google-plus: #dc4e41,
+    html5: #e34f26,
+    imdb: #f5de50,
+    imgur: #85bf25,
+    instagram: #405de6,
+    kickstarter: #2bde73,
+    linkedin: #0077b5,
+    medium: #00ab6b,
+    myspace: #000000,
+    patreon: #e6461a,
+    periscope: #3aa4c6,
+    pinterest: #bd081c,
+    quora: #a82400,
+    reddit: #ff4500,
+    rss: #f26522,
+    shopify: #96bf48,
+    skype: #00aff0,
+    soundcloud: #ff8800,
+    spotify: #2ebd59,
+    stackoverflow: #fe7a15,
+    streamable: #0f90fa,
+    tripadvisor: #589442,
+    tumblr: #35465c,
+    twitch-tv: #6441a5,
+    twitter: #55acee,
+    vimeo: #162221,
+    vine: #00b488,
+    vkontakte: #45668e,
+    yahoo: #410093,
+    youtube: #cd201f
+);

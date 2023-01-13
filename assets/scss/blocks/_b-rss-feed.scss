@@ -1,0 +1,6 @@
+.b-rss-feed {
+    @include section;
+    &__container {
+        @include container;
+    }
+}

@@ -1,0 +1,64 @@
+/**
+ * Used primarily for React but can be used by other components too.
+ */
+.c-option-select {
+    // TODO: Don't use !important, find a nicer way to play with the component
+    border-radius: 0 !important;
+    counter-reset: labelcount;
+
+    // &:after {
+    //     content: counter(labelcount);
+    //     position: absolute;
+    //     right: 5rem;
+    //     top: 50%;
+    //     transform: translateY(-50%);
+    //     background: #000;
+    //     width: 32px;
+    //     height: 32px;
+    //     border-radius: 50%;
+    //     display: inline-block;
+    //     color: #fff;
+    //     text-align: center;
+    //     line-height: 32px;
+    // }
+
+    &__multi-value {
+        max-width: 100px !important;
+        &:before {
+            counter-increment: labelcount;
+            content: "";
+        }
+    }
+
+    &__value-container {
+        @include font(regular);
+    }
+
+    // Outer wrapper for the selector (input, not dropdown)
+    &__control {
+        border-color: #000 !important;
+        border-width: 2px !important;
+        border-radius: 0 !important;
+        min-height: 50px !important;
+
+        &--is-selected {
+            min-height: 50px !important;
+        }
+    }
+
+    &__placeholder {
+        color: #000 !important;
+        @include font-size(h5);
+        @include font(regular);
+    }
+
+    &__indicator {
+        color: #000 !important;
+    }
+
+    &__menu,
+    &__menu-list {
+        border-radius: 0 !important;
+        border: 1px solid #000;
+    }
+}

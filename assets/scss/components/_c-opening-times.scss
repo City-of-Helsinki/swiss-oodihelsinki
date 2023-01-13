@@ -1,0 +1,41 @@
+.c-opening-times {
+    line-height: 1;
+    position: relative;
+    padding-left: 4.5rem;
+
+    &:before {
+        content: "\f017";
+        font-weight: 400;
+        font-family: 'Font Awesome\ 5 Free';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 3.3rem;
+    }
+
+    &__times {
+        @include font(bold);
+        @include font-size(mdsm); // yup
+    }
+
+    &__link {
+        opacity: 0.7;
+        @include font-size(sm);
+        padding-right: 2rem;
+        position: relative;
+
+        &:after {
+            content: "\f061";
+            font-weight: 900;
+            font-family: 'Font Awesome\ 5 Free';
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 8px;
+        }
+    }
+}

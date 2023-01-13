@@ -1,0 +1,13 @@
+@import "../../../../../assets/scss/everblox-helper";
+
+.b-downloads {
+    @include section();
+
+    &__title {
+        @include spacing(margin, bottom, itemspace);
+    }
+
+    &__container {
+        @include container();
+    }
+}

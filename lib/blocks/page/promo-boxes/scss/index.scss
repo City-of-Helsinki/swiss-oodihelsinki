@@ -1,0 +1,20 @@
+@import "../../../../../assets/scss/everblox-helper";
+
+.b-promo-boxes {
+    @include section();
+
+    &__container {
+        @include container();
+    }
+
+    &__intro {
+        @include bp(sm) {
+            max-width: 600px;
+        }
+    }
+
+    &__items {
+        @include spacing(margin, top, section);
+        @include spacing(margin, bottom, section);
+    }
+}

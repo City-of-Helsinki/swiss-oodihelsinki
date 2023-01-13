@@ -1,0 +1,31 @@
+.c-timetable {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    @include font-size(h3);
+    @include spacing(margin, bottom, box);
+    @include font(medium);
+
+    @include bp(md) {
+        width: 90%;
+        font-size: 3rem;
+    }
+
+    &__row {
+        display: table-row;
+        width: 100%;
+        @include spacing(margin, bottom, box);
+    }
+
+    &__day,
+    &__times {
+        display: table-cell;
+    }
+
+    &__day {
+    }
+
+    &__times {
+        text-align: right;
+    }
+}

@@ -1,0 +1,50 @@
+.b-image {
+    @include section(false);
+
+    &__container {
+        @include container;
+    }
+
+    &__image-wrapper {
+        margin: auto;
+        display: none;
+        
+        &--yellow {
+            @include koro-block("yellow","section","horizontal","top");
+        }
+
+        &--turquoise {
+            @include koro-block("turquoise","section","horizontal","top");
+        }
+
+        &--pink {
+            @include koro-block("pink","section","horizontal","top");
+        }
+
+        &--grey {
+            @include koro-block("grey","section","horizontal","top");
+        }
+
+        &--blue {
+            @include koro-block("blue","section","horizontal","top");
+        }
+
+        &--white {
+            @include koro-block("white","section","horizontal","top");
+        }
+
+        &--almost-black {
+            @include koro-block("almost-black","section","horizontal","top");
+        }
+        
+    }
+
+    &__image {
+        @include z-index(content);
+        position: relative;
+        display: block;
+        margin: auto;
+        width: 100%;
+        background-size: auto 100%;
+    }
+}

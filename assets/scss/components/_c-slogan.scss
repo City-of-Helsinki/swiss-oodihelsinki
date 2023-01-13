@@ -1,0 +1,13 @@
+.c-slogan {
+    @include spacing(margin, left, itemspace);
+    p {
+        line-height: 1;
+        @include font(regular);
+        span {
+            @include font(bold);
+            line-height: 1;
+            display: inline-block;
+            margin-right: 1rem;
+        }
+    }
+}

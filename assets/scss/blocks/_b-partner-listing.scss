@@ -1,0 +1,28 @@
+.b-partner-listing {
+    @include section;
+    &__container {
+        @include container;
+    }
+    &__links {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        a {
+            width:100%;
+            @include bp(sm) {
+                width: 90%;
+            }
+        }
+    }
+    &__item {
+        width:100%;
+        text-align: center;
+        @include spacing(margin,bottom,box);
+        @include bp(sm) {
+            width: 50%;
+        }
+        @include bp(md) {
+            width: 25%;
+        }
+    }
+}

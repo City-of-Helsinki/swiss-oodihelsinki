@@ -1,0 +1,15 @@
+.c-countdown {
+    &__data {
+        font-size: 10rem;
+        line-height: normal;
+        @include font(bold);
+        @include bp(md) {
+            line-height: inherit;
+        }
+    }
+    &__after {
+        display:inline-block;
+        transform: translateY(-2.5rem);
+        @include font(bold);
+    }
+}

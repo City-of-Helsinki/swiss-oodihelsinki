@@ -1,0 +1,67 @@
+// Sorry future maintainer, I actually needed to reuse this for blogs after all.
+.c-event-sidebar {
+
+    a {
+        @include font(bold);
+        @include font-size(mdsm); // yup
+        transition: 0.2s ease-in-out;
+
+        &:hover,
+        &:focus {
+            color: $color-link-hover;
+
+            i, svg {
+                border-color: $color-link-hover !important;
+            }
+
+            svg {
+                fill: $color-link-hover;
+            }
+        }
+    }
+
+    i {
+        transition: 0.2s ease-in-out;
+    }
+
+    // yup
+    svg {
+        width: 36px;
+        height: 36px;
+        vertical-align: middle;
+        border-radius: 50%;
+        border: 2px solid #000;
+        padding: 5px;
+        margin-right: 4px;
+        transition: 0.2s ease-in-out;
+    }
+
+    ul, li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        @include font(regular);
+    }
+
+    &__section {
+        @include spacing(margin, bottom, itemspace);
+    }
+
+    &__extra-link {
+        color: $color-blue-bright;
+        svg {
+            fill: $color-blue-bright;
+            border-color: $color-blue-bright;
+        }
+    }
+
+    &__calendar-link {
+    }
+}

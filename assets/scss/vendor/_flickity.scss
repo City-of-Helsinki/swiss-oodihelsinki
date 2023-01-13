@@ -1,0 +1,61 @@
+@import '~flickity/css/flickity.css';
+
+.flickity-viewport {
+    transition:$transition-default;
+}
+
+.flickity-prev-next-button {
+    background: none!important;
+    border:none!important;
+    //outline:none!important;
+    transition: $transition-default;
+    &:focus {
+        box-shadow:none;
+    }
+    &::after {
+        content:"";
+        font-family: 'Font Awesome\ 5 Free';
+        font-weight:900;
+        transform:translate(-50%, -50%);
+        display:inline-block;
+        background-size: contain;
+        background-repeat:no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 36px;
+        width: 36px;
+        opacity: 1;
+        @include bp(sm) {
+            width: 100%;
+            opacity:1;
+        }
+    }
+    svg {
+        display:none;
+    }
+    &.next {
+        right:-30px;
+        &::after {
+            background-image:url('/wp-content/themes/swiss/assets/img/oodi_round_arrow_right.svg');
+        }
+        @include bp(sm) {
+            right:-60px;
+            .no-touch &:hover {
+                right:-65px;
+            }
+        }
+    }
+    &.previous {
+        left:-30px;
+        &::after {
+            background-image:url('/wp-content/themes/swiss/assets/img/oodi_round_arrow_left.svg');
+        }
+        @include bp(sm) {
+            left:-60px;
+            .no-touch &:hover {
+                left:-65px;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="20px" viewBox="0 0 19 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 17</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.313076923 18.9176923 0.313076923 18.9176923 19.2307692 0 19.2307692"></polygon>
+    </defs>
+    <g id="Go-Mad-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-488.000000, -1389.000000)">
+        <g id="Group-15" transform="translate(468.000000, 1033.000000)">
+            <g id="Group-6" transform="translate(20.000000, 356.000000)">
+                <g id="Group-2">
+                    <g id="Group-17">
+                        <g id="Page-1">
+                            <g id="Group-3" transform="translate(0.000000, 0.456154)">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <g id="Clip-2"></g>
+                                <path d="M9.45807692,0.312846154 C4.23423077,0.312846154 -0.000384615385,4.54746154 -0.000384615385,9.77130769 C-0.000384615385,14.9951538 4.23423077,19.2313077 9.45807692,19.2313077 C14.6819231,19.2313077 18.9180769,14.9951538 18.9180769,9.77130769 C18.9180769,4.54746154 14.6819231,0.312846154 9.45807692,0.312846154 M9.45807692,17.2036154 C5.36115385,17.2036154 2.02730769,13.8697692 2.02730769,9.77130769 C2.02730769,5.67438462 5.36115385,2.34053846 9.45807692,2.34053846 C13.5557692,2.34053846 16.8903846,5.67438462 16.8903846,9.77130769 C16.8903846,13.8697692 13.5557692,17.2036154 9.45807692,17.2036154" id="Fill-1" fill="#000000" mask="url(#mask-2)"></path>
+                            </g>
+                            <polygon id="Fill-4" fill="#000000" points="10.4722308 5.45046154 8.44453846 5.45046154 8.44453846 10.6473846 11.9214615 14.1235385 13.3537692 12.6904615 10.4722308 9.80815385"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

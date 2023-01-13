@@ -1,0 +1,96 @@
+/**
+ * This component was borrowed "agilely" from an old project, so it doesn't represent
+ * the way CSS should be written. Sorry!
+ */
+.c-circle-plus {
+     height: 24px;
+     width: 24px;
+     font-size: 10px;
+     opacity: 1;
+     display: inline-block;
+     vertical-align: middle;
+     cursor: pointer;
+     border: 0;
+     background: none;
+     -webkit-appearance: none;
+     -moz-appearance:    none;
+
+     @include bp(sm) {
+         &:hover,
+         &:focus {
+             .circle {
+                 background-color: #000;
+                 .horizontal {
+                     background: #fff;
+                 }
+                 .vertical {
+                     background: #fff;
+                 }
+             }
+         }
+     }
+
+     &.closed {
+        .vertical {
+          transition: all 0.5s ease-in-out;
+          transform: rotate(-90deg);
+        }
+        .horizontal {
+          transition: all 0.5s ease-in-out;
+          transform: rotate(-90deg);
+          opacity: 1;
+        }
+      }
+
+      &.opened {
+        opacity: 1;
+        .vertical {
+          transition: all 0.5s ease-in-out;
+          transform: rotate(90deg);
+        }
+        .horizontal {
+          transition: all 0.5s ease-in-out;
+          transform: rotate(90deg);
+          opacity: 0;
+        }
+
+        .circle {
+            background-color: #000;
+            .horizontal {
+                background: #fff;
+            }
+            .vertical {
+                background: #fff;
+            }
+        }
+      }
+ }
+
+ .c-circle-plus .circle {
+     position: relative;
+     width: 22px;
+     height: 22px;
+     border-radius: 50%;
+     border: solid 1px #000;
+     transition: 0.2s ease-in-out;
+ }
+ .c-circle-plus .circle .horizontal {
+     position: absolute;
+     background-color: #000;
+     width: 8px;
+     height: 2px;
+     left: 50%;
+     margin-left: -4px;
+     top: 50%;
+     margin-top: -1px;
+ }
+ .c-circle-plus .circle .vertical {
+     position: absolute;
+     background-color: #000;
+     width: 2px;
+     height: 8px;
+     left: 50%;
+     margin-left: -1px;
+     top: 50%;
+     margin-top: -4px;
+ }
