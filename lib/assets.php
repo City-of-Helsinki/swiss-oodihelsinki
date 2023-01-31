@@ -3,6 +3,7 @@ namespace Evermade\Swiss\Assets;
 
 function publicScriptsAndStyles()
 {
+    $version = wp_get_theme()->get('Version');
 
     // de-register jquery, since we are manually adding it
     wp_deregister_script('jquery');
@@ -13,14 +14,25 @@ function publicScriptsAndStyles()
     // scripts
     wp_enqueue_script('modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js');
 
-    wp_enqueue_script('swiss-js', get_template_directory_uri().'/assets/dist/js/bundle.'.filemtime(get_stylesheet_directory() . '/assets/dist/js/bundle.js').'.js', array(), null, true);
+    wp_enqueue_script(
+      'swiss-js',
+      get_template_directory_uri().'/assets/dist/js/bundle.js',
+      array(),
+      $version,
+      true
+    );
 
     // fonts
     // wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,100italic,100,300italic,500,500italic,700,700italic,900,900italic');
     wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.3.1/css/all.css');
 
     // styles
-    wp_enqueue_style('swiss-css', get_template_directory_uri().'/assets/dist/css/bundle.'.filemtime(get_stylesheet_directory() . '/assets/dist/css/bundle.css').'.css');
+    wp_enqueue_style(
+      'swiss-css',
+      get_template_directory_uri().'/assets/dist/css/bundle.css',
+      array(),
+      $version
+    );
 
     // localization of swiss-js, accessible under global swissLocalization js object
     $translation_array = array(
