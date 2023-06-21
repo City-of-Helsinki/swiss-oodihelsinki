@@ -18,12 +18,13 @@
             }
 
             $tomorrow = new DateTime("tomorrow", new DateTimeZone('Europe/Helsinki') );
-            $tomorrow = $tomorrow->getTimestamp();
+            $tomorrow->setTime(0, 0, 0); // Set time to the beginning of the day
+            $tomorrow_timestamp = $tomorrow->getTimestamp();
             $now = new DateTime("now", new DateTimeZone('Europe/Helsinki') );
-            $now = $now->getTimestamp();
+            $now_timestamp = $now->getTimestamp();
 
             if( $openTimes ){
-                set_transient( 'open_times_today', $openTimes, $tomorrow - $now );
+                set_transient( 'open_times_today', $openTimes, $tomorrow_timestamp - $now_timestamp );
             } else {
                 // To check for new time but not spam it
                 set_transient( 'open_times_today', $openTimes, 3600 );
