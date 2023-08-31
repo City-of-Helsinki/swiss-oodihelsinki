@@ -1,35 +1,32 @@
 <?php
-    function getSchedule(){
-        if ( false === ( $openTimes = get_transient( 'open_times_today' ) ) ) {
+    function getSchedule() {
+        $today = new DateTime("now", new DateTimeZone('Europe/Helsinki'));
+        $today_date = $today->format('Y-m-d');
+
+        if (false === ($openTimes = get_transient('open_times_' . $today_date))) {
             $librarySchedule = wp_remote_get('https://api.kirjastot.fi/v4/schedules?library=86476');
-            if( isset($librarySchedule) ){
-                $libraryScheduleData = json_decode( $librarySchedule['body'] );
-        
-                if( isset($libraryScheduleData->items[0]->times[0]) ){
-                    $from = $libraryScheduleData->items[0]->times[0]->from;
-                    $to   = $libraryScheduleData->items[0]->times[0]->to;
             
-                    $openTimes = $from . ' - ' . $to;
-                } else {
-                    $openTimes = '';
-                }
+            if (is_wp_error($librarySchedule)) {
+                // Handle error here
+                return false;
+            }
+
+            $libraryScheduleData = json_decode($librarySchedule['body']);
+
+            if (isset($libraryScheduleData->items[0]->times[0]) && $libraryScheduleData->items[0]->date === $today_date) {
+                $from = $libraryScheduleData->items[0]->times[0]->from;
+                $to = $libraryScheduleData->items[0]->times[0]->to;
+
+                $openTimes = $from . ' - ' . $to;
             } else {
                 $openTimes = '';
             }
 
-            $tomorrow = new DateTime("tomorrow", new DateTimeZone('Europe/Helsinki') );
+            $tomorrow = new DateTime("tomorrow", new DateTimeZone('Europe/Helsinki'));
             $tomorrow->setTime(0, 0, 0); // Set time to the beginning of the day
-            $tomorrow_timestamp = $tomorrow->getTimestamp();
-            $now = new DateTime("now", new DateTimeZone('Europe/Helsinki') );
-            $now_timestamp = $now->getTimestamp();
-
-            if( $openTimes ){
-                set_transient( 'open_times_today', $openTimes, $tomorrow_timestamp - $now_timestamp );
-            } else {
-                // To check for new time but not spam it
-                set_transient( 'open_times_today', $openTimes, 3600 );
-            }
+            $expires_in = $tomorrow->getTimestamp() - $today->getTimestamp();
             
+            set_transient('open_times_' . $today_date, $openTimes, $expires_in);
         }
 
         return $openTimes;
