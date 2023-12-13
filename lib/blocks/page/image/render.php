@@ -10,6 +10,10 @@ echo '<section class="b-image">';
 
         foreach ($block->get('image_images') as $image) {
 
+            if ( empty($image['image']['url']) ) {
+                continue;
+            }
+
             $imageCSS = "";
             $imageWrapperCSS = "";
             $imageWrapperClass = "";
@@ -28,7 +32,7 @@ echo '<section class="b-image">';
 
                 $imageCSS .= "height:".$image['image']['height']."px;";
 
-            } else {
+            } else if ( ! empty( $image['image']['height'] ) && ! empty( $image['image']['width'] ) ) {
 
                 $paddingTop = $image['image']['height']/$image['image']['width']*100;
                 $imageCSS .= "padding-top:".$paddingTop."%;";
