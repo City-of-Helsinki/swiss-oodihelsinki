@@ -10,6 +10,10 @@ echo '<section class="b-image">';
 
         foreach ($block->get('image_images') as $image) {
 
+            if ( empty($image['image']['url']) ) {
+                continue;
+            }
+
             $imageCSS = "";
             $imageWrapperCSS = "";
             $imageWrapperClass = "";
