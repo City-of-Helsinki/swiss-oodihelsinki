@@ -1,6 +1,6 @@
 <?php // \Evermade\Swiss\debug($event); ?>
 
-<section class="b-subpage-hero <?php if ($isEvent) :?>b-subpage-hero--event<?php endif;?>">
+<section class="b-subpage-hero <?php if (! empty($isEvent)) :?>b-subpage-hero--event<?php endif;?>">
     <div class="b-subpage-hero__container">
         <div class="b-subpage-hero__text">
             <div class="b-subpage-hero__text--inner b-subpage-hero__text--inner-blog">

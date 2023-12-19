@@ -1,4 +1,7 @@
 {
   "name": "evermade/swiss-oodihelsinki",
-  "type": "wordpress-theme"
+  "type": "wordpress-theme",
+  "require": {
+      "spatie/calendar-links": "^1.8"
+  }
 }
