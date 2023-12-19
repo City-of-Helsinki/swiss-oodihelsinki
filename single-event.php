@@ -11,48 +11,47 @@ if ($sitepress->get_current_language() != $lang) {
 }
 
 // Get store details from LinkedEvents
-$linkedEvents = new \Evermade\LinkedEvents\LinkedEvents();
-$event = $linkedEvents->getStore(get_query_var('store_id'));
+$event = apply_filters( 'linked_events_single_event_details', new \stdClass(), get_query_var( 'store_id' ) );
 $event_status = $event->event_status != "EventCancelled" ? '' : __("Event Cancelled" , 'swiss');
 
 if ( $sitepress->get_current_language() ) {
     switch ($sitepress->get_current_language()) {
-    case 'fi':
-        $name = $event->name->fi;
-        $desc = $event->description->fi;
-        $short_desc = $event->short_description->fi;
-        $info_url = $event->info_url != null ? $event->info_url->fi : '';
-        $location_name = $event->location->name->fi;
-        $location_address = $event->location->street_address->fi;
-        $location_extra = $event->location_extra_info != null ? $event->location_extra_info->fi : '';
-        break;
-    case 'en':
-        $name = $event->name->en;
-        $desc = $event->description->en;
-        $short_desc = $event->short_description->en;
-        $info_url = $event->info_url != null ? $event->info_url->en : '';
-        $location_name = $event->location->name->en;
-        $location_address = $event->location->street_address->en;
-        $location_extra = $event->location_extra_info != null ? $event->location_extra_info->en : '';
-        break;
-    case 'sv':
-        $name = $event->name->sv;
-        $desc = $event->description->sv;
-        $short_desc = $event->short_description->sv;
-        $info_url = $event->info_url != null ? $event->info_url->sv : '';
-        $location_name = $event->location->name->sv;
-        $location_address = $event->location->street_address->sv;
-        $location_extra = $event->location_extra_info != null ? $event->location_extra_info->sv : '';
-        break;
-    default:
-        $name = $event->name->fi;
-        $desc = $event->description->fi;
-        $short_desc = $event->short_description->fi;
-        $info_url = $event->info_url != null ? $event->info_url->fi : '';
-        $location_name = $event->location->name->fi;
-        $location_address = $event->location->street_address->fi;
-        $location_extra = $event->location_extra_info != null ? $event->location_extra_info->fi : '';
-        break;
+        case 'fi':
+            $name = $event->name->fi ?? '';
+            $desc = $event->description->fi ?? '';
+            $short_desc = $event->short_description->fi ?? '';
+            $info_url = $event->info_url->fi ?? '';
+            $location_name = $event->location->name->fi ?? '';
+            $location_address = $event->location->street_address->fi ?? '';
+            $location_extra = $event->location_extra_info->fi ?? '';
+            break;
+        case 'en':
+            $name = $event->name->en ?? '';
+            $desc = $event->description->en ?? '';
+            $short_desc = $event->short_description->en ?? '';
+            $info_url = $event->info_url->en ?? '';
+            $location_name = $event->location->name->en ?? '';
+            $location_address = $event->location->street_address->en ?? '';
+            $location_extra = $event->location_extra_info->en ?? '';
+            break;
+        case 'sv':
+            $name = $event->name->sv ?? '';
+            $desc = $event->description->sv ?? '';
+            $short_desc = $event->short_description->sv ?? '';
+            $info_url = $event->info_url->sv ?? '';
+            $location_name = $event->location->name->sv ?? '';
+            $location_address = $event->location->street_address->sv ?? '';
+            $location_extra = $event->location_extra_info->sv ?? '';
+            break;
+        default:
+            $name = $event->name->fi ?? '';
+            $desc = $event->description->fi ?? '';
+            $short_desc = $event->short_description->fi ?? '';
+            $info_url = $event->info_url->fi ?? '';
+            $location_name = $event->location->name->fi ?? '';
+            $location_address = $event->location->street_address->fi ?? '';
+            $location_extra = $event->location_extra_info->fi ?? '';
+            break;
     }
 }
 
