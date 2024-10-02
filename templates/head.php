@@ -1,20 +1,5 @@
-<!--
-
-    ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
-     _________    _____
-    |_________|  |  ___|                                   _
-     _________   | |_  __   _____ _ __ _ __ ___   __ _  __| | ___
-    |_________|  |  _| \ \ / / _ \ '__| '_ ` _ \ / _` |/ _` |/ _ \
-     _________   | |___ \ V /  __/ |  | | | | | | (_| | (_| |  __/
-    |_________|  |_____| \_/ \___|_|  |_| |_| |_|\__,_|\__,_|\___|
-
-                ≡ Evermade.fi - Design & Development
-
-    ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
-
--->
 <!doctype html>
-<html class="no-js" <?php language_attributes();?> data-wpml=<?php 
+<html class="no-js" <?php language_attributes();?> data-wpml=<?php
 global $sitepress;
 if ($sitepress->get_default_language() != ICL_LANGUAGE_CODE){
     echo $sitepress->get_current_language();
@@ -32,12 +17,12 @@ if ($sitepress->get_default_language() != ICL_LANGUAGE_CODE){
     <link rel="dns-prefetch" href="//use.fontawesome.com">
 
     <?php wp_head();
-    
+
     if(is_page_template("page-teos.php")){
     ?>
          <link rel="stylesheet" type="text/css" href="<?=get_template_directory_uri()?>/assets/teos/style.css?v=16">
     <?php
-        } 
+        }
     ?>
 
 
