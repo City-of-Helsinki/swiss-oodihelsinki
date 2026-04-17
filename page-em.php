@@ -4,8 +4,10 @@
 
 get_header();
 
-if (!isset($_GET['t'])) {
-    $_GET['t'] = 'index';
+$tget = htmlspecialchars( $_GET['t'], ENT_QUOTES, "UTF-8" );
+
+if (!isset( $tget )) {
+    $tget = 'index';
 }
 
 $folders = array('components', 'layouts', 'blocks');
@@ -17,9 +19,9 @@ $folders = array('components', 'layouts', 'blocks');
         <div class="b-toolbox__tabs">
 
             <ul>
-                <li><a href="<?php echo add_query_arg('t', 'index'); ?>">Home</a></li>
-                <li><a href="<?php echo add_query_arg('t', 'styleguide'); ?>">Styleguide</a></li>
-                <li><a href="<?php echo add_query_arg('t', 'playground'); ?>">Playground</a></li>
+                <li><a href="<?php echo esc_url( add_query_arg('t', 'index') ); ?>">Home</a></li>
+                <li><a href="<?php echo esc_url( add_query_arg('t', 'styleguide') ); ?>">Styleguide</a></li>
+                <li><a href="<?php echo esc_url( add_query_arg('t', 'playground') ); ?>">Playground</a></li>
             </ul>
 
         </div>
@@ -29,15 +31,15 @@ $folders = array('components', 'layouts', 'blocks');
 
 <?php
 
-switch ($_GET['t']) {
+switch ( $tget ) {
     case 'playground':
-        include(get_template_directory().'/templates/toolbox/playground.php');
+        include_once(get_template_directory().'/templates/toolbox/playground.php');
         break;
     case 'styleguide':
-        include(get_template_directory().'/templates/toolbox/styleguide.php');
+        include_once(get_template_directory().'/templates/toolbox/styleguide.php');
         break;
     default:
-        include(get_template_directory().'/templates/toolbox/index.php');
+        include_once(get_template_directory().'/templates/toolbox/index.php');
         break;
 };
 
